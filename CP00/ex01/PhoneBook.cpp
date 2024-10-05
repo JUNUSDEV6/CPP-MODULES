@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 17:11:02 by yohanafi          #+#    #+#             */
-/*   Updated: 2024/10/05 17:43:56 by yohanafi         ###   ########.fr       */
+/*   Updated: 2024/10/05 18:07:45 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,16 @@ void	PhoneBook::get_contact(void)
 	std::string	index;
 	int			nb;
 
+	std::cout << "[ INDEX CONTACT ] : ";
 	std::getline(std::cin, index);
 	nb = std::atoi(index.c_str());
-	if (nb < 0 || nb > 8 || index.empty())
+	if (nb >= 0 && nb <= 8)
 	{
-		std::cout << "error input, give between (0 & 8)";
-		index = "";
+		contacts[nb].get_string(nb);
+	}
+	else
+	{
+		std::cout << "error input, give between (0 & 8)" << std::endl;
 		PhoneBook::get_contact();
-	}	
+	}
 }

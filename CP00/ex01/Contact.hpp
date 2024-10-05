@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 15:52:31 by yohanafi          #+#    #+#             */
-/*   Updated: 2024/10/05 17:17:00 by yohanafi         ###   ########.fr       */
+/*   Updated: 2024/10/05 18:08:00 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class	Contact
 
 
 		void	set_string(void);
-		void	get_string(void);
+		void	get_string(int index);
 
 	private:
 

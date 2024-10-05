@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 15:44:00 by yohanafi          #+#    #+#             */
-/*   Updated: 2024/10/05 17:23:13 by yohanafi         ###   ########.fr       */
+/*   Updated: 2024/10/05 18:10:16 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,19 @@ void Contact::set_string(void)
 		}
 	} while(true);
 	input = "";
+}
+
+void	Contact::get_string(int index)
+{
+	std::cout << "[ INDEX ] ";
+	std::cout << index << std::endl;
+
+	std::cout << "[ FIRST NAME ]";
+	std::cout << this->first_name << std::endl;
+	
+	std::cout << "[ LAST NAME ]";
+	std::cout << this->last_name << std::endl;
+	
+	std::cout << "[ NICKNAME ]";
+	std::cout << this->nickname << std::endl;
 }
