@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 16:52:00 by yohanafi          #+#    #+#             */
-/*   Updated: 2024/10/05 15:47:50 by yohanafi         ###   ########.fr       */
+/*   Updated: 2024/10/05 17:27:10 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ class	PhoneBook
 {
 	public:
 
-		void addContact(int index);
-
+		void	addContact(int index);
+		void	get_contact(void);
 		
 
 	private:

@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 16:10:24 by yohanafi          #+#    #+#             */
-/*   Updated: 2024/10/05 16:23:59 by yohanafi         ###   ########.fr       */
+/*   Updated: 2024/10/05 17:29:32 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(void)
 {
 	PhoneBook	phonebook;
 	std::string	option;
-	int			i;
+	int			i = 0;
 
 	while (1)
 	{
@@ -26,9 +26,13 @@ int	main(void)
 		if (option == "ADD")
 		{
 			if (i == 8)
-				i = 0
+				i = 0;
 			phonebook.addContact(i);
 			i++;
+		}
+		if (option == "SEARCH")
+		{
+			phonebook.get_contact();
 		}
 	}
 }
