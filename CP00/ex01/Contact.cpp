@@ -6,39 +6,32 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 15:44:00 by yohanafi          #+#    #+#             */
-/*   Updated: 2024/09/28 17:02:13 by yohanafi         ###   ########.fr       */
+/*   Updated: 2024/10/05 16:13:49 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include <iostream>
+#include <iomanip>
+#include <string>
 #include "Contact.hpp"
 
-void Contact::get_string(int i)
+void Contact::set_string(void)
 {
-	if (i == 0)
+	//char	buff;
+	std::string	input;
+
+	std::cout << " Enter info " << std::endl;
+	do
 	{
-		std::cout << "FIRST NAME : ";
-		std::cin >> this->first_name; 
-	}
-	if (i == 1)
-	{
-		std::cout << "LAST NAME : ";
-		std::cin >> this->last_name; 
-	}
-	if (i == 2)
-	{
-		std::cout << "NICKNAME : ";
-		std::cin >> this->nickname; 
-	}
-	if (i == 3)
-	{
-		std::cout << "PHONE NUMBER : ";
-		std::cin >> this->phone_number; 
-	}
-	if (i == 4)
-	{
-		std::cout << "SECRET : ";
-		std::cin >> this->secret; 
-	}
+		std::cout << "[ FIRST NAME ] :";
+		std::getline(std::cin, input);
+		if (!input.empty())
+		{
+			std::cout << "got something : " << input << std::endl;
+			break ;
+		}
+		//std::cout << "got nothing" << std::endl;
+		break;
+	} while(true);
 
 }

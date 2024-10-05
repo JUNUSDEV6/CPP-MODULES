@@ -6,22 +6,31 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 16:52:00 by yohanafi          #+#    #+#             */
-/*   Updated: 2024/09/28 17:07:56 by yohanafi         ###   ########.fr       */
+/*   Updated: 2024/10/05 15:47:50 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
-# include "Contact.hpp"
 # include <iostream>
+# include <iomanip>
+# include <string>
+# include "Contact.hpp"
+
+
 
 class	PhoneBook
 {
-	private:
-		Contact contact[8];
-
 	public:
+
 		void addContact(int index);
+
+		
+
+	private:
+	
+		Contact contacts[7];
+
 };
 
 #endif
