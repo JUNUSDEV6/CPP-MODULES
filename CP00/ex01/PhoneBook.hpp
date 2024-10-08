@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 16:52:00 by yohanafi          #+#    #+#             */
-/*   Updated: 2024/10/08 13:41:28 by yohanafi         ###   ########.fr       */
+/*   Updated: 2024/10/08 16:33:40 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <iomanip>
 # include <string>
 # include "Contact.hpp"
+# define BOLD_GREEN   "\033[1;32m"
 
 
 

@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 15:44:00 by yohanafi          #+#    #+#             */
-/*   Updated: 2024/10/08 14:37:11 by yohanafi         ###   ########.fr       */
+/*   Updated: 2024/10/08 16:40:09 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 #include <iomanip>
 #include <string>
 #include "Contact.hpp"
+
+#define BOLD_GREEN   "\033[1;32m"
+#define BOLD_RED     "\033[1;31m"
+#define BOLD_CYAN    "\033[1;36m"
+#define RESET   "\033[0m" 
 
 void Contact::set_string(void)
 {
@@ -94,10 +99,10 @@ void	Contact::get_tab(int i)
 	if (!this->first_name.empty() && !this->last_name.empty() && !this->nickname.empty() && i == 1)
 	{
 		std::cout << std::string(60, '-') << std::endl;
-		std::cout << std::setw(10) << "INDEX" 
-                      << "|" << std::setw(10) << "FIRSTNAME" 
-                      << "|" << std::setw(10) << "LASTNAME" 
-                      << "|" << std::setw(10) << "NICKNAME" << std::endl;
+		std::cout << std::setw(10) << BOLD_CYAN "INDEX" RESET
+                      << "|" << std::setw(10) << BOLD_CYAN "FIRSTNAME" RESET 
+                      << "|" << std::setw(10) << BOLD_CYAN "LASTNAME" RESET 
+                      << "|" << std::setw(10) << BOLD_CYAN "NICKNAME" RESET << std::endl;
         std::cout << std::string(60, '-') << std::endl;
 	}
 	if (!this->first_name.empty() && !this->last_name.empty() && !this->nickname.empty())
@@ -109,23 +114,28 @@ void	Contact::get_tab(int i)
 	}
 }
 
-void	Contact::get_string(int index)
+void	Contact::get_string(void)
 {
+	if (!this->first_name.empty() && !this->last_name.empty() && !this->nickname.empty())
+	{
+		std::cout << BOLD_GREEN "[ FIRST NAME ] : " RESET;
+		std::cout << this->first_name << std::endl;
 
-	std::cout << std::string(80, '-') << std::endl;
-	std::cout << std::setw(10) << "INDEX" 
-                  << "|" << std::setw(10) << "FIRSTNAME" 
-                  << "|" << std::setw(10) << "LASTNAME"
-                  << "|" << std::setw(10) << "NICKNAME"
-                  << "|" << std::setw(10) << "NUMBER"
-                  << "|" << std::setw(10) << "SECRET" << std::endl;
-    std::cout << std::string(80, '-') << std::endl;
-    // Affiche les informations du contact
-    std::cout << std::setw(10) << index + 1
-            << "|"  << std::setw(10) << trunc(this->first_name, 9)
-            << "|"  << std::setw(10) << trunc(this->last_name, 9)
-            << "|"  << std::setw(10) << trunc(this->nickname, 9)
-            << "|"  << std::setw(10) << trunc(this->phone_number, 9)
-			<< "|" << std::setw(10) << trunc(this->secret, 9) << std::endl;
+		std::cout << BOLD_GREEN "[ LAST NAME ] : " RESET;
+		std::cout << this->last_name << std::endl;
 
+		std::cout << BOLD_GREEN "[ NICKNAME ] : " RESET;
+		std::cout << this->nickname << std::endl;
+
+		std::cout << BOLD_GREEN "[ PHONE NUMBER ] : " RESET;
+		std::cout << this->phone_number << std::endl;
+
+		std::cout << BOLD_GREEN "[ SECRET ] : " RESET;
+		std::cout << this->secret << std::endl;
+	}
+	else
+	{
+		std::cout << std::endl;
+		std::cout << BOLD_RED "EMPTY CONTACT AT THIS INDEX" RESET << std::endl;
+	}
 }

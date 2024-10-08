@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 15:52:31 by yohanafi          #+#    #+#             */
-/*   Updated: 2024/10/08 13:44:46 by yohanafi         ###   ########.fr       */
+/*   Updated: 2024/10/08 15:38:34 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class	Contact
 
 		std::string	trunc(const std::string &stringg, size_t len);
 		void		set_string(void);
-		void		get_string(int index);
+		void		get_string(void);
 		void		get_tab(int i);
 
 	private:

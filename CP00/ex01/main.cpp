@@ -6,11 +6,13 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 16:10:24 by yohanafi          #+#    #+#             */
-/*   Updated: 2024/10/08 14:45:50 by yohanafi         ###   ########.fr       */
+/*   Updated: 2024/10/08 15:47:27 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+#define BOLD_CYAN    "\033[1;36m"
+#define RESET   "\033[0m" 
 
 
 int	main(void)
@@ -22,7 +24,7 @@ int	main(void)
 	while (1)
 	{
 		std::cout << std::endl;
-		std::cout << "[ ADD | SEARCH | EXIT ] : ";
+		std::cout << BOLD_CYAN "[ ADD | SEARCH | EXIT ] : " RESET;
 		std::getline(std::cin, option);
 		if (option == "ADD")
 		{
@@ -35,5 +37,8 @@ int	main(void)
 		{
 			phonebook.get_contact();
 		}
+		if (option == "EXIT")
+			break ;
 	}
+	return 0;
 }
