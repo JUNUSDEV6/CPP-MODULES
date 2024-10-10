@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 16:22:31 by yohanafi          #+#    #+#             */
-/*   Updated: 2024/10/10 16:46:48 by yohanafi         ###   ########.fr       */
+/*   Updated: 2024/10/10 16:48:36 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Zombie::Zombie(std::string name)
 {
+	this->name = name;
 	std::cout	<< "contructor called" << std::endl;
 }
 
