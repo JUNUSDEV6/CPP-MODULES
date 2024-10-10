@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 15:40:21 by yohanafi          #+#    #+#             */
-/*   Updated: 2024/10/10 15:55:30 by yohanafi         ###   ########.fr       */
+/*   Updated: 2024/10/10 16:46:40 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class	Zombie
 {
 	public:
 
-		Zombie(void);
+		Zombie(std::string name);
 		~Zombie(void);
 		
 		void	announce(void);
