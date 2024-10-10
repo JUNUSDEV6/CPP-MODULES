@@ -6,7 +6,7 @@
 #    By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/10 12:21:17 by yohanafi          #+#    #+#              #
-#    Updated: 2024/10/10 12:54:07 by yohanafi         ###   ########.fr        #
+#    Updated: 2024/10/10 12:59:42 by yohanafi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = megaphone
 
 CC	= c++
 
-CFLAGS = -Wall -Werror -Wextra -std=c++98
+CFLAGS = -Wall -Werror -Wextra -std=c++98 -Wpedantic
 
 SRC	= megaphone.cpp
 
