@@ -1,17 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 17:09:27 by yohanafi          #+#    #+#             */
-/*   Updated: 2024/10/10 17:10:43 by yohanafi         ###   ########.fr       */
+/*   Created: 2024/10/10 17:21:44 by yohanafi          #+#    #+#             */
+/*   Updated: 2024/10/10 17:23:46 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	main(void)
+#include <string>
+
+Zombie	*zombieHorde(int N, std::string name)
 {
-	
-	return 0;
+	for (int i = 0; i <= N; i++)
+	{
+		Zombie 
+	}
 }
