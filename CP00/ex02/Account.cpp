@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 13:54:36 by yohanafi          #+#    #+#             */
-/*   Updated: 2024/10/10 12:10:02 by yohanafi         ###   ########.fr       */
+/*   Updated: 2024/10/10 12:56:42 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void	Account::_displayTimestamp(void)
 	std::cout	<< "[" << (ltm->tm_year + 1900)
 				<< std::setw(2) << std::setfill('0') << (ltm->tm_mon + 1)
 				<< std::setw(2) << std::setfill('0') << ltm->tm_mday
+				<< "_"
 				<< std::setw(2) << std::setfill('0') << ltm->tm_hour
 				<< std::setw(2) << std::setfill('0') << ltm->tm_min
 				<< std::setw(2) << std::setfill('0') << ltm->tm_sec << "]";

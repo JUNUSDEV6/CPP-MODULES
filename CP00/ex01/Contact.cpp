@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 15:44:00 by yohanafi          #+#    #+#             */
-/*   Updated: 2024/10/08 16:40:09 by yohanafi         ###   ########.fr       */
+/*   Updated: 2024/10/10 12:48:37 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,10 +99,10 @@ void	Contact::get_tab(int i)
 	if (!this->first_name.empty() && !this->last_name.empty() && !this->nickname.empty() && i == 1)
 	{
 		std::cout << std::string(60, '-') << std::endl;
-		std::cout << std::setw(10) << BOLD_CYAN "INDEX" RESET
-                      << "|" << std::setw(10) << BOLD_CYAN "FIRSTNAME" RESET 
-                      << "|" << std::setw(10) << BOLD_CYAN "LASTNAME" RESET 
-                      << "|" << std::setw(10) << BOLD_CYAN "NICKNAME" RESET << std::endl;
+		std::cout << std::setw(10) << "INDEX"
+                      << "|" << std::setw(10) << "FIRSTNAME" 
+                      << "|" << std::setw(10) << "LASTNAME" 
+                      << "|" << std::setw(10) << "NICKNAME" << std::endl;
         std::cout << std::string(60, '-') << std::endl;
 	}
 	if (!this->first_name.empty() && !this->last_name.empty() && !this->nickname.empty())

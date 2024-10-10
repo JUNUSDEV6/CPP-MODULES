@@ -6,17 +6,17 @@
 #    By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/10 12:21:17 by yohanafi          #+#    #+#              #
-#    Updated: 2024/10/10 12:54:07 by yohanafi         ###   ########.fr        #
+#    Updated: 2024/10/10 12:55:48 by yohanafi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME = bank
 
 CC	= c++
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC	= megaphone.cpp
+SRC	= Account.cpp tests.cpp 
 
 OBJECTS	= $(SRC:.cpp=.o)
 
