@@ -6,12 +6,20 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 17:09:27 by yohanafi          #+#    #+#             */
-/*   Updated: 2024/10/10 17:10:43 by yohanafi         ###   ########.fr       */
+/*   Updated: 2024/10/11 12:23:23 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Zombie.hpp"
+
 int	main(void)
 {
+	Zombie	*zombie1 = newZombie("Foo");
+	zombie1->announce();
+
+	delete zombie1;
+
+	randomChump("bar");
 	
 	return 0;
 }

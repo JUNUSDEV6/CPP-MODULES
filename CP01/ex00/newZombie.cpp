@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 16:22:31 by yohanafi          #+#    #+#             */
-/*   Updated: 2024/10/10 17:01:25 by yohanafi         ###   ########.fr       */
+/*   Updated: 2024/10/11 12:16:15 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 Zombie *newZombie(std::string name)
 {
-	return new Zombie(name);
+	return (new Zombie(name));
 }
