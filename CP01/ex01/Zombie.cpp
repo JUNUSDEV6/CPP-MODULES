@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 14:07:53 by yohanafi          #+#    #+#             */
-/*   Updated: 2024/10/11 14:15:28 by yohanafi         ###   ########.fr       */
+/*   Updated: 2024/10/11 14:21:01 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ void	Zombie::setName(std::string name)
 
 void	Zombie::announce(void)
 {
-	std::cout << "the zombie of the horde is dead :" << this->name << std::endl;  
+	std::cout << "the zombie of the horde is dead :" << this->name << " X(" << std::endl;  
 }
