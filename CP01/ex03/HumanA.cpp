@@ -6,13 +6,13 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 13:37:18 by yohanafi          #+#    #+#             */
-/*   Updated: 2024/10/12 14:34:46 by yohanafi         ###   ########.fr       */
+/*   Updated: 2024/10/12 14:45:26 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(const std::string& name, Weapon& weapon) : name(name), weapon(&weapon)
+HumanA::HumanA(const std::string& name, Weapon& weapon) : weapon(&weapon), name(name)
 {
 	std::cout << "constructor Human_A called" << std::endl;
 }
@@ -25,8 +25,8 @@ HumanA::~HumanA(void)
 void	HumanA::attack(void)
 {
 	if (weapon)
-		std::cout << name << "attack with her weapon : " << weapon->getType() << std::endl;
+		std::cout << name << " attack with her weapon : " << weapon->getType() << std::endl;
 	else
 
-		std::cout << name << "attack with no weapon :(" << std::endl;	
+		std::cout << name << " attack with no weapon :(" << std::endl;	
 }

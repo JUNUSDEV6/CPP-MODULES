@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 14:22:57 by yohanafi          #+#    #+#             */
-/*   Updated: 2024/10/12 14:35:06 by yohanafi         ###   ########.fr       */
+/*   Updated: 2024/10/12 14:42:48 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class	HumanB
 		HumanB(const std::string& name);
 		~HumanB(void);
 		void	attack(void);
+		void		setType(Weapon& newWeapon);
 
 	private:
 	
