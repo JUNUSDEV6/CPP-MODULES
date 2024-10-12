@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 12:42:45 by yohanafi          #+#    #+#             */
-/*   Updated: 2024/10/12 14:03:12 by yohanafi         ###   ########.fr       */
+/*   Updated: 2024/10/12 14:22:24 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,9 @@ class	HumanA
 	
 	private:
 
-		Weapon&		weapon;
+		Weapon*		weapon;
 		std::string	name;
 };
 
-//HumanA	getWeapon()
 
 #endif
