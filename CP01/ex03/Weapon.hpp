@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 15:46:38 by yohanafi          #+#    #+#             */
-/*   Updated: 2024/10/11 15:58:45 by yohanafi         ###   ########.fr       */
+/*   Updated: 2024/10/12 13:27:18 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,15 @@ class	Weapon
 {
 	public:
 
-		Weapon(void);
+		Weapon(const std::string& type);
 		~Weapon(void);
 
-		std::string	&getType(void) const;
-		void		setType(std::string str);
+		const std::string&	getType(void) const;
+		void		setType(const std::string& str);
 	
 	private:
 		std::string	type;
 };
+
 
 #endif
