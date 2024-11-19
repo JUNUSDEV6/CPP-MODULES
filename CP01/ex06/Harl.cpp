@@ -6,7 +6,7 @@
 /*   By: yohanafi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 16:16:22 by yohanafi          #+#    #+#             */
-/*   Updated: 2024/11/19 15:13:46 by yohanafi         ###   ########.fr       */
+/*   Updated: 2024/11/19 16:21:57 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void	Harl::debug(void)
 
 void	Harl::info(void)
 {
-	std:::cout << "[ INFO ]" << std::endl;
-	std::cout << "i cannot believe adding extra bacon costs more money. you dind't put enough bacon in my burger! If you did, I wouldn't be asking for more!" << std:endl;
+	std::cout << "[ INFO ]" << std::endl;
+	std::cout << "i cannot believe adding extra bacon costs more money. you dind't put enough bacon in my burger! If you did, I wouldn't be asking for more!" << std::endl;
 }
 
 void	Harl::warning(void)
@@ -56,11 +56,11 @@ void	Harl::complain(std::string level)
 		&Harl::error
 	};
 
-	std::string levelNames[] = { "DEBUG", "INFO", "WARNING", "ERROR" }
+	std::string levelNames[] = { "DEBUG", "INFO", "WARNING", "ERROR" };
 
-	for (int i = 0, i < 4, i++)
+	for (int i = 0; i < 4; i++)
 	{
-		level == levelNames[i]
+		if (level == levelNames[i])
 		{
 			(this->*levels[i])();
 			return ;
