@@ -26,6 +26,7 @@ Fixed& Fixed::operator=(const Fixed& other)
 
 const int	Fixed::getRawBits(void)
 {
+	std::cout << "getRawBits member function called" << std::endl;
 	return this->value;
 }
 
