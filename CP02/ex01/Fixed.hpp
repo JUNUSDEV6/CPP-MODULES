@@ -16,6 +16,6 @@ class	Fixed
 		const int	toInt(void);
 	private:
 
-		int			value;
+		int			value = 8;
 		static const int	bits;
 };
