@@ -6,12 +6,14 @@ class	Fixed
 {
 	public:
 		Fixed(void);
+		Fixed(const int nb);
+		Fixed(const float nb);
 		Fixed(const Fixed& other);
 		Fixed& operator=(const Fixed& other);
 		~Fixed(void);
-		
-		const int	getRawbits(void);
-		void		setRawbits(int const raw);
+
+		const float	toFloat(void);
+		const int	toInt(void);
 	private:
 
 		int			value;
