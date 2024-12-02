@@ -13,10 +13,15 @@ class	Fixed
 		Fixed& operator=(const Fixed& other);
 		~Fixed(void);
 
-		const float	toFloat(void);
-		const int	toInt(void);
+		float	toFloat(void) const;
+		int	toInt(void) const;
 	private:
 
 		int			value;
 		static const int	bits = 8;
 };
+
+std::ostream &operator<<(std::ostream &out, const Fixed &f);
+#endif
+
+
