@@ -1,6 +1,7 @@
 #ifndef FIXED_HPP
 # define FIXED_HPP
 # include <iostream>
+# include <cmath>
 
 class	Fixed
 {
@@ -16,6 +17,6 @@ class	Fixed
 		const int	toInt(void);
 	private:
 
-		int			value = 8;
-		static const int	bits;
+		int			value;
+		static const int	bits = 8;
 };
