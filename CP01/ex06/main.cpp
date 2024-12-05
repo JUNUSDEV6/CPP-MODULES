@@ -11,7 +11,7 @@ int	main(int argc, char **argv)
 		std::cerr << "./Harl levels" << std::endl;
 		return 1;
 	}
-	std::string	levels[] {"DEBUG", "INFO", "WARNING", "ERROR"};
+	std::string	levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	std::string	inputUser = argv[1];
 	for (int i = 0; i < 4; i++)
 	{
@@ -26,10 +26,13 @@ int	main(int argc, char **argv)
 	{
 		case 0:
 			harl.complain("DEBUG");
+			break ;
 		case 1:
 			harl.complain("INFO");
+			break ;
 		case 2:
 			harl.complain("WARNING");
+			break ;
 		case 3:
 			harl.complain("ERROR");
 			break ;

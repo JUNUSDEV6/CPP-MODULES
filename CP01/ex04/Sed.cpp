@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 15:06:19 by yohanafi          #+#    #+#             */
-/*   Updated: 2024/11/12 16:00:25 by yohanafi         ###   ########.fr       */
+/*   Updated: 2024/12/05 15:57:55 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 Sed::Sed(const std::string& filename, std::string& s1, std::string& s2)
 {
-	std::ifstream	inputfile(filename);
+	std::ifstream	inputfile(filename.c_str());
 	if (!inputfile)
 		std::cerr << "Error with the open file process" << std::endl;
 		

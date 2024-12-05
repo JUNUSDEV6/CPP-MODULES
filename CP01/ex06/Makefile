@@ -5,19 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/10/11 13:43:16 by yohanafi          #+#    #+#              #
-#    Updated: 2024/10/11 13:44:59 by yohanafi         ###   ########.fr        #
+#    Created: 2024/10/10 12:21:17 by yohanafi          #+#    #+#              #
+#    Updated: 2024/12/05 16:03:09 by yohanafi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
-NAME = BraiiiiiiinnnzzzZ
+NAME = bank
 
 CC	= c++
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98 -Wpedantic
 
-SRC	= main.cpp newZombie.cpp randomChump.cpp Zombie.cpp 
+SRC	= main.cpp Harl.cpp 
 
 OBJECTS	= $(SRC:.cpp=.o)
 
