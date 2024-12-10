@@ -1,7 +1,7 @@
 #include "Fixed.hpp"
 
 
-Fixed::Fixed(void)
+Fixed::Fixed(void) :value(0)
 {
 	std::cout << "Constructor Fixed Called" << std::endl; 
 }
@@ -23,6 +23,72 @@ Fixed& Fixed::operator=(const Fixed& other)
 	return *this;
 }
 
+bool	Fixed::operator>(const Fixed& other) const
+{
+	return value > other.value;
+}
+
+bool	Fixed::operator<(const Fixed& other) const
+{
+	return value < other.value;
+}
+
+bool	Fixed::operator>=(const Fixed& ohter) const
+{
+	return value >= other.value;
+}
+
+bool	Fixed::operator<=(const Fixed& other) const
+{
+	return value <= other.value;
+}
+
+bool	Fixed::operator==(const Fixed& other) const
+{
+	return value == other.value;
+}
+
+bool	Fixed::operator!=(const Fixed& other) const
+{
+	return value != other.value;
+}
+
+fixed	Fixed::operator+(const Fixed& other)
+{
+	Fixed	rlt;
+
+	rlt.setRawBits(this->value + other.getRawBits());
+
+	return rlt;
+}
+
+Fixed	Fixed::operator-(const Fixed& other)
+{
+	Fixed	rlt;
+
+	rlt.setRawBits(this->value - other.getRawBits());
+
+	return rlt;
+}
+
+Fixed	Fixed::operator*(const Fixed& other)
+{
+	Fixed	rlt;
+
+	rlt.setRawbits(this->value * other.getRawBits());
+
+	return rlt;
+}
+
+Fixed	Fixed::operator/(const Fixed& other)
+{
+	Fixed	rlt;
+
+	rlt.setRawBits(this->value / other.getRawBits());
+
+	return rlt;
+}
+
 Fixed::Fixed(const Fixed &other)
 {
 	std::cout << "copy constructor called" << std::endl;
@@ -32,6 +98,17 @@ Fixed::Fixed(const Fixed &other)
 Fixed::~Fixed(void)
 {
 	std::cout << "destructor called" << std::endl;
+}
+
+int Fixed::getRawbits(void) const
+{
+	std::cout << "getRawbits member function called" std::endl;
+	return this->value;
+}
+
+void	fixed::setRawbits(int const raw)
+{
+	this->value = raw;
 }
 
 float Fixed::toFloat(void) const

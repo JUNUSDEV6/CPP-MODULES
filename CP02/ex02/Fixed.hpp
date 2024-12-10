@@ -32,7 +32,7 @@ class	Fixed
 		static Fixed	&max(const Fixed& a, const Fixed& b);
 		~Fixed(void);
 		
-		const int	getRawBits(void);
+		int		getRawBits(void) const;
 		void		setRawBits(int const raw);
 		float		toFloat(void) const;
 		int		toInt(void) const;
@@ -41,6 +41,8 @@ class	Fixed
 
 		int			value;
 		static const int	bits = 8;
-}
+};
+
+std::ostream &operator<<(std::ostream &out, const Fixed &f);
 
 #endif
