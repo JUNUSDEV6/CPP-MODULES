@@ -89,6 +89,56 @@ Fixed	Fixed::operator/(const Fixed& other)
 	return rlt;
 }
 
+Fixed	&Fixed::operator++(void)
+{
+	++*this->value;
+	return value;
+}
+
+Fixed	Fixed::operator++(int)
+{
+	Fixed	rlt(*this);
+
+	value++;
+
+	return *this;
+}
+
+Fixed	&Fixed::operator--(void)
+{
+	--*this->value;
+	return value;
+}
+
+Fixed	Fixed::operator--(int)
+{
+	Fixed	rlt(*this);
+
+	value--;
+
+	return *this;
+}
+
+static Fixed	Fixed::&min(Fixed& a, Fixed& b)
+{
+	return ((a < b) ? a : b);
+}
+
+static const Fixed	Fixed::&min(const Fixed& a, const Fixed& b)
+{
+	return ((a < b) ? a : b);
+}
+
+static Fixed	Fixed::&max(Fixed& a, Fixed& b)
+{
+	return ((a < b) ? a : b);
+}
+
+static const Fixed	Fixed::&max(const Fixed& a, const Fixed& b)
+{
+	return ((a < b) ? a : b);
+}
+
 Fixed::Fixed(const Fixed &other)
 {
 	std::cout << "copy constructor called" << std::endl;

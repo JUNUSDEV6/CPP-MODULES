@@ -27,9 +27,9 @@ class	Fixed
 		Fixed	operator--(int);
 
 		static Fixed	&min(Fixed& a, Fixed& b);
-		static Fixed	&min(const Fixed& a, const Fixed& b);
+		static const Fixed	&min(const Fixed& a, const Fixed& b);
 		static Fixed	&max(Fixed& a, Fixed& b);
-		static Fixed	&max(const Fixed& a, const Fixed& b);
+		static const Fixed	&max(const Fixed& a, const Fixed& b);
 		~Fixed(void);
 		
 		int		getRawBits(void) const;
