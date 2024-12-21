@@ -32,12 +32,13 @@ Fixed::~Fixed(void)
 	std::cout << "destructor called" << std::endl;
 }
 
-int	Fixed::getRawbits(void) const
+int	Fixed::getRawBits(void) const
 {
 	std::cout << "getRawbits member function called" << std::endl;
+	return this->value;
 }
 
-void	Fixed::setRawbits(int const raw)
+void	Fixed::setRawBits(int const raw)
 {
 	this->value = raw;
 }
