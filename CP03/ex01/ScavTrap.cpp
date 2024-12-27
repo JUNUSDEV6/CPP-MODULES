@@ -6,19 +6,60 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 13:42:39 by yohanafi          #+#    #+#             */
-/*   Updated: 2024/12/27 14:40:07 by yohanafi         ###   ########.fr       */
+/*   Updated: 2024/12/27 15:30:39 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScravTrap.hpp"
+#include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(std::string name) : _name(name), _HitPoints(100), _EnergyPoints(50), _AttackDamage(20)
+ScavTrap::ScavTrap(void)
 {
-    std::cout << "Constructor ScravTrap Called" << std::endl;
+	std::cout << "constructor default called" << std::endl;
 }
 
-ClapTrap::~ClapTrap(void)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-    std::cout << "Destructor ScravTrap Called" << std::endl;
+    _HitPoints = 100;
+    _EnergyPoints = 50;
+    _AttackDamage = 20;
+    std::cout << "Constructor ScavTrap Called" << std::endl;
 }
 
+ScavTrap::~ScavTrap(void)
+{
+    std::cout << "Destructor ScavTrap Called" << std::endl;
+}
+
+ScavTrap::ScavTrap(const ScavTrap& other) : _name(other.name), _HitPoints(other._HitPoints), _EnergyPoints(other._EnergyPoints), _AttackDamage(other._AttackDamage)
+{
+    std::cout << "Constructor Copy Called" << std::endl;
+}
+
+ScavTrap& ScavTrap::operator=(const ScavTrap& other)
+{
+    if (this != &other)
+    {
+        _name = other._name;
+		_HitPoints = other._HitPoints;
+		_EnergyPoints = other._EnergyPoints;
+		_AttackDamage = other._AttackDamage;
+	}
+	std::cout << "operator constructor called" << std::endl;
+	return *this;    
+}
+
+void    ScavTrap::attack(const std::string& target)
+{
+    if (_HitPoints > 0 && _EnergyPoints > 0)
+	{
+		_EnergyPoints--;
+		std::cout << "ScavTrap :" << _name << " attack " << target << " and causing " << _AttackDamage << " amount of damage " << std::endl;
+	}
+	else
+		std::cout << "ScavTrap " << _name << " can't attack because insufficiency of amount " << _EnergyPoints << " energy" << " or " << _HitPoints << " healt point" <<  std::endl;
+}
+
+void    ScavTrap::guardGate(void)
+{
+    std::cout << "ScavTrap " << _name << " now is in keeper mode" << std::endl;
+}

@@ -1,16 +1,32 @@
-#include "ClapTrap.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/27 15:21:02 by yohanafi          #+#    #+#             */
+/*   Updated: 2024/12/27 15:24:09 by yohanafi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int	main(void)
-{
-    ClapTrap clap("CL4P-TP");
+#include "ScavTrap.hpp"
 
-    clap.attack("enemy");
-    clap.takeDamage(11);
-    clap.beRepaired(5);
+int main() {
+    std::cout << "Creating ScavTrap...\n";
+    ScavTrap scav1("Scavy");
 
-    clap.attack("another enemy");
-    clap.takeDamage(15);
-    clap.beRepaired(3);
+    ScavTrap scav2 = scav1; // Copy constructor
+    ScavTrap scav3;
+    scav3 = scav1;          // Copy assignment operator
 
+    ScavTrap scav4(std::move(scav1)); // Move constructor
+    ScavTrap scav5;
+    scav5 = std::move(scav4);         // Move assignment operator
+
+    scav3.attack("enemy");
+    scav3.guardGate();
+
+    std::cout << "\nDestroying ScavTrap...\n";
     return 0;
 }
