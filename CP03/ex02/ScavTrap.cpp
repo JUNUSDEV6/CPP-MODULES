@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 13:42:39 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/01/07 15:52:20 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/01/08 15:21:33 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& other)
 		_EnergyPoints = other._EnergyPoints;
 		_AttackDamage = other._AttackDamage;
 	}
-	std::cout << "operator constructor called" << std::endl;
+	std::cout << "operator ScavTrap constructor called" << std::endl;
 	return *this;    
 }
 

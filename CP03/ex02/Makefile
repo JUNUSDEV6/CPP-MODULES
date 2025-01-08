@@ -6,37 +6,35 @@
 #    By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/27 15:05:46 by yohanafi          #+#    #+#              #
-#    Updated: 2024/12/27 15:07:50 by yohanafi         ###   ########.fr        #
+#    Updated: 2025/01/08 15:59:38 by yohanafi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME = ScavTrap
+NAME = FragTrap
 
-CC	= c++
-
+CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98 -Wpedantic
 
-SRC	= main.c ClapTrap.cpp ScavTrap.cpp 
-
-OBJECTS	= $(SRC:.cpp=.o)
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+OBJECTS = $(SRC:.cpp=.o)
 
 RM = rm -f
 
-%.o:	%.cpp
+%.o: %.cpp
 		$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME):	$(OBJECTS)
-			$(CC) $(OBJECTS) -o $(NAME)
+$(NAME): $(OBJECTS)
+		$(CC) $(OBJECTS) -o $(NAME)
 
-all:	$(NAME)
+all: $(NAME)
 
-clean:	clean
+clean:
 		$(RM) $(OBJECTS)
 
-fclean:	clean
+fclean: clean
 		$(RM) $(NAME)
 
-re:		fclean all
+re: fclean all
 
 .PHONY: all clean fclean re
