@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 13:42:24 by yohanafi          #+#    #+#             */
-/*   Updated: 2024/12/27 15:15:18 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/01/07 14:29:35 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <iostream>
 # include "ClapTrap.hpp"
 
-class ScavTrap : public Claptrap
+class ScavTrap : public ClapTrap
 {
 	public:
 		ScavTrap(void);

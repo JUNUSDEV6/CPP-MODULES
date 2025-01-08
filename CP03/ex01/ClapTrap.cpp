@@ -6,20 +6,20 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 13:42:19 by yohanafi          #+#    #+#             */
-/*   Updated: 2024/12/27 15:16:49 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/01/07 15:51:39 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void)
+ClapTrap::ClapTrap(void) : _name("Murillo"),  _HitPoints(10), _EnergyPoints(10), _AttackDamage(0)
 {
 	std::cout << "constructor default called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : _name(name),  _HitPoints(10), _EnergyPoints(10), _AttackDamage(0)
+ClapTrap::ClapTrap(std::string name) : _name(name)
 {
-	std::cout << "Constructor ClapTrap  Called" << std::endl;
+	std::cout << "Constructor ClapTrap "<< name << " Called" << std::endl;
 }
 
 ClapTrap::~ClapTrap(void)

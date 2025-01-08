@@ -6,15 +6,15 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 13:42:39 by yohanafi          #+#    #+#             */
-/*   Updated: 2024/12/27 15:30:39 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/01/07 15:52:20 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(void)
+ScavTrap::ScavTrap(void) : ClapTrap()
 {
-	std::cout << "constructor default called" << std::endl;
+	std::cout << "constructor default "<< _name <<  " called" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
@@ -30,7 +30,7 @@ ScavTrap::~ScavTrap(void)
     std::cout << "Destructor ScavTrap Called" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& other) : _name(other.name), _HitPoints(other._HitPoints), _EnergyPoints(other._EnergyPoints), _AttackDamage(other._AttackDamage)
+ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other)
 {
     std::cout << "Constructor Copy Called" << std::endl;
 }
