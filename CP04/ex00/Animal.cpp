@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 15:32:28 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/01/10 18:31:29 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/01/15 13:29:53 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ Animal::Animal(const Animal& other) : _type(other._type)
 
 Animal& Animal::operator=(const Animal& other)
 {
-    if (this != other)
-        type = other._type;
+    if (this != &other)
+        _type = other._type;
     std::cout << "Animal operator Called" << std::endl;
     return *this; 
 }
@@ -40,7 +40,7 @@ std::string Animal::getType(void) const
     return _type;
 }
 
-void	Animal::makeSound(void)
+void	Animal::makeSound(void) const
 {
 	std::cout << "Animal make a sound of Animal" << std::endl;
 }

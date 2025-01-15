@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 14:27:08 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/01/10 17:44:19 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/01/15 13:27:26 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class   Animal
         virtual ~Animal(void);
 
         std::string		getType(void) const;
-        virtual void    makeSound(void);
+        virtual void    makeSound(void) const;
 
     protected:
         std::string		_type;

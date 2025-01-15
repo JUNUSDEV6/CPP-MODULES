@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 17:26:43 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/01/10 18:04:10 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/01/15 13:43:11 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ class   Cat : public Animal
         Cat(void);
         Cat(const Cat& other);
         Cat& operator=(const Cat& other);
-        ~cat(void);
+        virtual ~Cat(void);
+
+        virtual void    makeSound(void) const;
 };
 
 #endif

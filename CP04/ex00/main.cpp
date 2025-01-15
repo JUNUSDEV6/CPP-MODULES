@@ -6,9 +6,13 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 14:00:14 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/01/10 14:03:39 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/01/15 13:13:18 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
 
 int main()
 {
