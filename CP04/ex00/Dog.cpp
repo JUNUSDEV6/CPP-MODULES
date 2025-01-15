@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 18:25:30 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/01/10 18:33:44 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/01/15 12:59:49 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,10 @@ Dog& dog::operator=(const Dog& other)
 
 Dog::~Dog(void)
 {
-	
+	std::cout << "Destructor Dog Called" << std::endl;
+}
+
+void	Dog::makeSound(void)
+{
+	std::cout << "Dog say : WAF WAF" << std::endl;
 }
