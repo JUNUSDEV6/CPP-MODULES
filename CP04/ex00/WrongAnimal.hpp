@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 14:33:08 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/01/15 14:52:09 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/01/15 16:46:13 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ class   WrongAnimal
         WrongAnimal(void);
         WrongAnimal(const WrongAnimal& other);
         WrongAnimal& operator=(const WrongAnimal& other);
-        ~WrongAnimal(void);
+        virtual ~WrongAnimal(void);
 
         std::string getType(void) const;
         void        makeSound(void) const;
 
     protected:
-        std::st
+        std::string     _type;
 };
 
 #endif

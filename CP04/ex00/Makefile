@@ -6,7 +6,7 @@
 #    By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/15 13:10:50 by yohanafi          #+#    #+#              #
-#    Updated: 2025/01/15 13:11:43 by yohanafi         ###   ########.fr        #
+#    Updated: 2025/01/15 16:40:38 by yohanafi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = Animal
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98 -Wpedantic
 
-SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp
+SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 OBJECTS = $(SRC:.cpp=.o)
 
 RM = rm -f
