@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 14:00:14 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/01/15 16:43:29 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/01/16 17:46:37 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,59 +17,49 @@
 #include "WrongCat.hpp"
 
 int main() {
-    // Testing Animal, Dog, and Cat
-    std::cout << "=== Animal, Dog, and Cat Tests ===" << std::endl;
+    std::cout << "=== Animal Array Test ===" << std::endl;
 
-    const Animal* meta = new Animal();
-    const Animal* dog = new Dog();
-    const Animal* cat = new Cat();
+    const int size = 4;
+    Animal* animals[size];
 
-    std::cout << dog->getType() << " makes sound: ";
-    dog->makeSound();
+    for (int i = 0; i < size / 2; ++i) {
+        animals[i] = new Dog();
+    }
+    for (int i = size / 2; i < size; ++i) {
+        animals[i] = new Cat();
+    }
 
-    std::cout << cat->getType() << " makes sound: ";
-    cat->makeSound();
+    // Set and print brain ideas
+    Dog* dog = dynamic_cast<Dog*>(animals[0]);
+    if (dog) {
+        std::cout << "ici" << std::endl;
+        dog->setBrainIdea(0, "Chase the ball!");
+        std::cout << "Dog Brain Idea: " << dog->getBrainIdea(0) << std::endl;
+    }
 
-    std::cout << meta->getType() << " makes sound: ";
-    meta->makeSound();
+    Cat* cat = dynamic_cast<Cat*>(animals[2]);
+    if (cat) {
+        cat->setBrainIdea(0, "Catch the mouse!");
+        std::cout << "Cat Brain Idea: " << cat->getBrainIdea(0) << std::endl;
+    }
 
-    // Cleaning up
-    delete meta;
-    delete dog;
-    delete cat;
+    // Delete animals and check destructors
+    for (int i = 0; i < size; ++i) {
+        delete animals[i];
+    }
 
-    std::cout << "\n=== WrongAnimal and WrongCat Tests ===" << std::endl;
+    std::cout << "=== Deep Copy Test ===" << std::endl;
+    Dog dog1;
+    dog1.setBrainIdea(0, "Guard the house");
+    Dog dog2 = dog1; // Deep copy
 
-    // Testing WrongAnimal and WrongCat
-    const WrongAnimal* wrongMeta = new WrongAnimal();
-    const WrongAnimal* wrongCat = new WrongCat();
+    std::cout << "Dog1 Brain Idea: " << dog1.getBrainIdea(0) << std::endl;
+    std::cout << "Dog2 Brain Idea: " << dog2.getBrainIdea(0) << std::endl;
 
-    std::cout << wrongMeta->getType() << " makes sound: ";
-    wrongMeta->makeSound(); // WrongAnimal sound
+    dog2.setBrainIdea(0, "fdp");
 
-    std::cout << wrongCat->getType() << " makes sound: ";
-    wrongCat->makeSound(); // Still WrongAnimal sound due to lack of virtual
-
-    const WrongCat* actualWrongCat = new WrongCat();
-    std::cout << actualWrongCat->getType() << " makes sound: ";
-    actualWrongCat->makeSound(); // This will call WrongCat::makeSound() because the pointer is of type WrongCat
-
-    // Cleaning up
-    delete wrongMeta;
-    delete wrongCat;
-    delete actualWrongCat;
-
-    std::cout << "\n=== Additional Tests ===" << std::endl;
-
-    // Testing assignment and copy constructor for polymorphic and non-polymorphic cases
-    Dog originalDog;
-    Dog copiedDog(originalDog);
-
-    WrongCat originalWrongCat;
-    WrongCat copiedWrongCat(originalWrongCat);
-
-    std::cout << "Copied Dog type: " << copiedDog.getType() << std::endl;
-    std::cout << "Copied WrongCat type: " << copiedWrongCat.getType() << std::endl;
+    std::cout << "Dog1 Brain Idea: " << dog1.getBrainIdea(0) << std::endl;
+    std::cout << "Dog2 Brain Idea: " << dog2.getBrainIdea(0) << std::endl;
 
     return 0;
 }
