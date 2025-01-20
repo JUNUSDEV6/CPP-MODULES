@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: youneshanafi <youneshanafi@student.42.f    +#+  +:+       +#+        */
+/*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 15:58:23 by youneshanaf       #+#    #+#             */
-/*   Updated: 2025/01/17 16:49:06 by youneshanaf      ###   ########.fr       */
+/*   Updated: 2025/01/20 17:14:20 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ class	ICharacter
 {
 	public:
 		ICharacter(void);
-		ICharacter(const ICharacter& other);
-		ICharacter& operator=(const ICharacter& other);
 		virtual ~ICharacter(void);
 		
 		virtual	std::string const &getName(void) const = 0;

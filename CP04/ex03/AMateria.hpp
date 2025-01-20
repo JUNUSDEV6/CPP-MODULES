@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 15:33:17 by youneshanaf       #+#    #+#             */
-/*   Updated: 2025/01/20 15:10:16 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/01/20 17:21:35 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define AMATERIA_HPP
 # include <iostream>
 # include "ICharacter.hpp"
+
+class	ICharacter;
 
 class	AMateria
 {
@@ -27,6 +29,7 @@ class	AMateria
 		virtual void use(ICharacter &target);
 	
 	protected:
+		std::string	_type;
 };
 
 

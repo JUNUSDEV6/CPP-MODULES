@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 16:00:37 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/01/20 16:05:57 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/01/20 17:21:37 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ class   Ice : public : AMateria
         virtual ~Ice(void);
         virtual AMateria* clone(void) const;
         virtual void    use(ICharacter& target);
-}
+};
+
 #endif
