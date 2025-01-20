@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: youneshanafi <youneshanafi@student.42.f    +#+  +:+       +#+        */
+/*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 15:33:17 by youneshanaf       #+#    #+#             */
-/*   Updated: 2025/01/17 16:05:27 by youneshanaf      ###   ########.fr       */
+/*   Updated: 2025/01/20 15:10:16 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ class	AMateria
 {
 	public:
 		AMateria(void);
-		AMateria(const AMateria& other);
-		AMateria& operator=(const AMateria& other);
 		virtual	~AMateria(void);
 
 		AMateria(std::string const & type);	
