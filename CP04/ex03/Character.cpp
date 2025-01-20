@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: youneshanafi <youneshanafi@student.42.f    +#+  +:+       +#+        */
+/*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 16:55:07 by youneshanaf       #+#    #+#             */
-/*   Updated: 2025/01/17 17:30:12 by youneshanaf      ###   ########.fr       */
+/*   Updated: 2025/01/20 14:44:36 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,31 @@ Character::Character(void)
 	std::cout << "Destructor Character called" << std::endl;
 	for (int i = 0; i < 4; i++)
 		delete	_inventory[i];
+}
+
+std::string	const Character::getName(void)	const
+{
+	return	_name;
+}
+
+void	Character::equip(AMateria* m)
+{
+	for (int i = 0; i < 4; i++)
+		if	(!_inventory[i])
+		{
+			_inventory[i] = m;
+			return ;
+		}
+}
+
+void	Character::unequip(int idx)
+{
+	if (idx >= 0 && idx <= 4)
+		_inventory[idx] = NULL;
+}
+
+void	Character::use(int idx, ICharacter& target)
+{
+	if (idx >= 0 && idx <= 4)
+		_inventory[idx]->use(target);
 }
