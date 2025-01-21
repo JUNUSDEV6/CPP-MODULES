@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 17:34:23 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/01/20 17:45:33 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/01/21 13:09:46 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class   IMateriaSource
     public:
         IMateriaSource(void);
         virtual ~IMateriaSource(void);
-        virtual void learnMateria(AMateria*) = 0;
+        virtual void learnMateria(AMateria* m) = 0;
         virtual AMateria* createMateria(std::string const &type) = 0;
 } 
 

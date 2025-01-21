@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 16:55:07 by youneshanaf       #+#    #+#             */
-/*   Updated: 2025/01/20 14:44:36 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/01/21 12:50:37 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ Character&	Character::operator=(const Character& other)
 	return *this;
 }
 
-Character::Character(void)
+Character::~Character(void)
 {
 	std::cout << "Destructor Character called" << std::endl;
 	for (int i = 0; i < 4; i++)
