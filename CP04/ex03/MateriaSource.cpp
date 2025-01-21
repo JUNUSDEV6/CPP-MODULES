@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 12:33:38 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/01/21 14:28:51 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/01/21 15:51:48 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ MateriaSource::MateriaSource(void)
         _template[i] = NULL;
 }
 
-AMateria::AMateria(const AMateria& other)
+MateriaSource::MateriaSource(const MateriaSource& other)
 {
     for(int i = 0; i < 4; i++)
     {
@@ -30,7 +30,7 @@ AMateria::AMateria(const AMateria& other)
     }
 }
 
-AMateria&   AMateria::operator=(const AMateria& other)
+MateriaSource&   MateriaSource::operator=(const MateriaSource& other)
 {
     if (this != &other)
     {
@@ -39,7 +39,7 @@ AMateria&   AMateria::operator=(const AMateria& other)
             if (_template[i])
                 delete  _template[i];
             if (other._template[i])
-                _template = other._template[i]->clone();
+                _template[i] = other._template[i]->clone();
             else
                 _template[i] = NULL;
         }
@@ -64,12 +64,23 @@ void    MateriaSource::learnMateria(AMateria* m)
         }
 }
 
-AMateria*   AMateria::createMateria(std::string const &type)
+AMateria*   MateriaSource::createMateria(std::string const &type)
 {
     for (int i = 0; i < 4; i++)
     {
-        (_template[i] && _template[i]->getType() == type)
+       if (_template[i] && _template[i]->getType() == type)
             return _template[i]->clone();
     }
     return NULL;
+}
+
+void    MateriaSource::printMaterias(void)
+{
+    for (int i = 0; i < 4; i++)
+    {
+        if (!_template[i])
+            std::cout << "nothing in "<< i << _template[i] << " :(" << std::endl;
+        else
+            std::cout << "we have something in" << i << _template[i] << " :)" << std::endl;
+    }
 }

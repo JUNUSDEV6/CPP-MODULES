@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 16:55:07 by youneshanaf       #+#    #+#             */
-/*   Updated: 2025/01/21 12:50:37 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/01/21 16:28:46 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ Character::~Character(void)
 		delete	_inventory[i];
 }
 
-std::string	const Character::getName(void)	const
+std::string	const &Character::getName(void)	const
 {
 	return	_name;
 }
@@ -77,12 +77,23 @@ void	Character::equip(AMateria* m)
 
 void	Character::unequip(int idx)
 {
-	if (idx >= 0 && idx <= 4)
+	if (idx >= 0 && idx <= 4 && _inventory[idx])
 		_inventory[idx] = NULL;
 }
 
 void	Character::use(int idx, ICharacter& target)
 {
-	if (idx >= 0 && idx <= 4)
+	if (idx >= 0 && idx <= 4 && _inventory[idx])
 		_inventory[idx]->use(target);
+}
+
+void    Character::printMaterias(void)
+{
+    for (int i = 0; i < 4; i++)
+    {
+        if (!_inventory[i])
+            std::cout << "nothing in "<< i << _inventory[i] << " :(" << std::endl;
+        else
+            std::cout << "we have something in" << i << _inventory[i] << " :)" << std::endl;
+    }
 }

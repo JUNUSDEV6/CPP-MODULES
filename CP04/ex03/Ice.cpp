@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 16:06:22 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/01/20 16:11:41 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/01/21 15:23:17 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Ice::~Ice(void)
     std::cout << "Destructor Ice Called" << std::endl;
 }
 
-AMateria*   Ice::clone(void) Constructor
+AMateria*   Ice::clone(void) const
 {
     return  new Ice();
 }

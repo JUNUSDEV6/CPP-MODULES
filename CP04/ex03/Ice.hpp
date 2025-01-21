@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 16:00:37 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/01/20 17:21:37 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/01/21 14:44:09 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define    ICE_HPP
 # include   "AMateria.hpp"
 
-class   Ice : public : AMateria
+class   Ice : public AMateria
 {
     public:
         Ice(void);

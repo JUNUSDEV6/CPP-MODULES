@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 14:54:31 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/01/20 17:31:41 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/01/21 15:30:07 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,10 @@ AMateria::AMateria(void)
 
 AMateria::~AMateria(void)
 {
-    std::cout << "Destructor AMateria Called" << std::endl
+    std::cout << "Destructor AMateria Called" << std::endl;
 }
+
+AMateria::AMateria(std::string const & type) : _type(type){}
 
 std::string const &AMateria::getType(void) const
 {
@@ -30,5 +32,5 @@ std::string const &AMateria::getType(void) const
 
 void    AMateria::use(ICharacter& target)
 {
-    void(Target);
+    (void) target;
 }

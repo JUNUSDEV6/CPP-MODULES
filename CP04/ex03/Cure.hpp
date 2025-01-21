@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 15:11:38 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/01/20 17:21:41 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/01/21 14:44:05 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define CURE_HPP
 # include "AMateria.hpp"
 
-class   Cure : public : AMateria
+class   Cure : public AMateria
 {
     public:
         Cure(void);
