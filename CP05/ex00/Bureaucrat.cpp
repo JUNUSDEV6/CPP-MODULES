@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: youneshanafi <youneshanafi@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 17:59:56 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/01/22 18:11:43 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/02/14 15:03:16 by youneshanaf      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,5 @@ std::string Bureaucrat::getName(void) const
 
 std::string Bureaucrat::getGrade(void) const
 {
-    
+    return  _grade;
 }
