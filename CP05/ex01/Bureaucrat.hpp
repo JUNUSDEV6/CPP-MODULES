@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 17:41:18 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/02/17 15:29:56 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/02/17 17:04:31 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ class   Bureaucrat
         int         getGrade(void) const;
         void        incrGrade(void);
         void        decrGrade(void);
-        void        signForm(void);
+        void        signForm(Form &form);
     
     private:
         std::string _name;

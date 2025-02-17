@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 14:17:30 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/02/17 15:24:27 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/02/17 16:47:14 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ class   Form
         int         getGrade(void)      const;
         int         getExcGrade(void)   const;
         bool        getBool(void)       const;
-        void        beSigned(const Bureaucrat &a);
+        void        beSigned(const Bureaucrat &bureaucrat);
 
     private:
         std::string _name;
