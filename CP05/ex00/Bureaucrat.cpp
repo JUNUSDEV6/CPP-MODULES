@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: youneshanafi <youneshanafi@student.42.f    +#+  +:+       +#+        */
+/*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 17:59:56 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/02/14 17:30:53 by youneshanaf      ###   ########.fr       */
+/*   Updated: 2025/02/17 13:37:54 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,10 @@ void	Bureaucrat::decrGrade(void)
 		throw	GradeTooLowException();
 	else
 		_grade--;
+}
+
+std::ostream	&operator<<(std::ostream &os, const Bureaucrat&b)
+{
+	os << b.getName() << ", Bureaucrat grade " << b.getGrade() << ".";
+	return os;
 }

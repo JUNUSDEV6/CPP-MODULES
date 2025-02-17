@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: youneshanafi <youneshanafi@student.42.f    +#+  +:+       +#+        */
+/*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 17:41:18 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/02/14 17:28:09 by youneshanaf      ###   ########.fr       */
+/*   Updated: 2025/02/17 13:35:47 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,7 @@ class   Bureaucrat
         int         _grade;
 
 };
+
+std::ostream    &operator<<(std::ostream &os, const Bureaucrat &b);
 
 #endif
