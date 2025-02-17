@@ -6,27 +6,31 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 17:41:18 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/02/17 13:35:47 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/02/17 14:05:02 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCAT_HPP
 # define BUREAUCAT_HPP
 # include <iostream>
+# include <stdexcept>
+# include <string>
 
 class   Bureaucrat
 {
     public:
         Bureaucrat(const std::string &name, int grade);
+        Bureaucrat(const Bureaucrat &other);
+        Bureaucrat  &operator=(const Bureaucrat &other);
         ~Bureaucrat(void);
 
-		class	GradeTooHighException : std::exception
+		class	GradeTooHighException : public std::exception
 		{
 			public:
         		virtual const char *what() const throw();
     	};
 
-		class	GradeTooLowException : std::exception
+		class	GradeTooLowException : public std::exception
 		{
 			public:
 				virtual const char *what() const throw();

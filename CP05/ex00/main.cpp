@@ -6,11 +6,11 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 13:23:54 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/02/17 13:27:45 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/02/17 13:38:37 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.h"
+#include "Bureaucrat.hpp"
 
 int main() {
     try {

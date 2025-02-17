@@ -6,11 +6,11 @@
 #    By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/17 13:28:12 by yohanafi          #+#    #+#              #
-#    Updated: 2025/02/17 13:31:22 by yohanafi         ###   ########.fr        #
+#    Updated: 2025/02/17 13:40:27 by yohanafi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Animal
+NAME = Bureaucrat
 
 CC = c++ 
 CFLAGS = -Wall -Werror -Wextra -std=c++98 -Wpedantic
