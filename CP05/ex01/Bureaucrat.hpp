@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 17:41:18 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/02/17 17:04:31 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/02/19 11:21:55 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 # include <iostream>
 # include <stdexcept>
 # include <string>
+# include "Form.hpp"
+
+class   Form;
 
 class   Bureaucrat
 {

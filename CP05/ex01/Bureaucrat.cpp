@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 17:59:56 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/02/17 17:26:22 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/02/19 11:21:32 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	Bureaucrat::signForm(Form &form)
 {
 	try
 	{
-		form.beSigned(*this)
+		form.beSigned(*this);
 		std::cout <<_name << "signed"  << form.getName() << std::endl;
 	}
 	catch (std::exception &e)
