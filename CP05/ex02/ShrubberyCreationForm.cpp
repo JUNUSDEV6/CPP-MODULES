@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 15:21:12 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/02/20 15:35:05 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/02/20 16:01:33 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,15 @@ ShrubberyCreationForm::~ShrubberyCreationForm(void)
 
 void    ShrubberyCreationForm::executeAction(void) const
 {
-    
+    std::ofstream file((_target + "_shruberry").c_str());
+    if (file.is_open())
+    {
+        file << "       #\n"
+                "      ###\n"
+                "     #####\n"
+                "    #######\n"
+                "   #########\n"
+                "      ###\n";
+        file.close();
+    }
 }
