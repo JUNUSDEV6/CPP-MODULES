@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 12:27:03 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/02/20 12:35:34 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/02/20 12:40:22 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,8 @@ class   PresidentialPardonForm : public : AForm
         PresidentialPardonForm(const std::string &target);
         virtual ~PresidentialPardonForm(void);
         void    executeAction(void)     const;
+    
+     private:
+        std::string target;
 }
 #endif

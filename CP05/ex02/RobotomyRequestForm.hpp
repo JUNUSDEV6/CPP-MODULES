@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 16:19:20 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/02/20 12:26:51 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/02/20 12:40:18 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ class   RobotomyRequestForm : public : AForm
         RobotomyRequestForm(const std::string &target);
         virtual ~RobotomyRequestForm(void);
         void    executeAction(void) const;
+    
+     private:
+        std::string target;
 };
 
 #endif
