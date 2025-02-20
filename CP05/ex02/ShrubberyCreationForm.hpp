@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 16:20:33 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/02/20 12:40:08 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/02/20 12:45:04 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class   ShrubberyCreationForm : public : AForm
         void   executeAction(void)  const;
     
     private:
-        std::string target;
+        std::string _target;
 };
 
 #endif
