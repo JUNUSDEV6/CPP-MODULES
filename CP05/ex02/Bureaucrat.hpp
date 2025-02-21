@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 17:41:18 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/02/20 14:28:42 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/02/21 13:23:01 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 # include <iostream>
 # include <stdexcept>
 # include <string>
-# include "Form.hpp"
+# include "AForm.hpp"
 
-class   Form;
+class   AForm;
 
 class   Bureaucrat
 {
@@ -43,7 +43,7 @@ class   Bureaucrat
         int         getGrade(void) const;
         void        incrGrade(void);
         void        decrGrade(void);
-        void        signForm(Form &form);
+        void        signForm(Aform &Aform);
         void        executeForm(AForm const &form);
     
     private:

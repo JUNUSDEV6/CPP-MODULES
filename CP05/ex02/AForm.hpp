@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 12:59:41 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/02/19 15:02:16 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/02/21 13:22:03 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,11 @@
 # include <iostream>
 # include <stdexcept>
 # include <string>
+# include "Bureaucrat.hpp"
 
-class   AFORM
+class   Bureaucrat;
+
+class   AForm
 {
     public:
         AForm(const std::string &name, const int grade, const int excGrade);
@@ -40,13 +43,13 @@ class   AFORM
         {
             public:
                 virtual const char* what() const throw();
-        }
+        };
         
-        std::string &getName(void)      const;
+        std::string getName(void)      const;
         int         getGrade(void)      const;
         int         getExcGrade(void)   const;
         bool        getBool(void)       const;
-        void        beSigned(Bureaucrat &Bureaucrat);
+        void        beSigned(Bureaucrat &bureaucrat);
         void        execute(Bureaucrat const & executor) const;
         virtual void    executeAction() const = 0;
 
@@ -57,6 +60,6 @@ class   AFORM
         bool        _boolean;
 };
 
-std::ostream    &operator<<(std::ostream &os, const Form &b);
+std::ostream    &operator<<(std::ostream &os, const AForm &b);
 
 #endif
