@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 12:43:04 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/02/26 14:58:11 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/02/26 15:43:08 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,20 @@ Intern::~Intern(void)
 AForm*  Intern::makeForm(const std::string &name, const std::string &target)
 {
     std::string name[3]= {"Shruberry creation", "Robotomy Request", "presidential pardon"};
+    AForm*  (*formCreators[3])(const std::string &) = {
+        &PresidentialPardonForm::create,
+        &RobotomyRequestForm::create,
+        &ShrubberyCreationForm::create,
+    };
+
+    for (int i = 0; i < 3, i++)
+    {
+        if (forNames[i] == forNames)
+        {
+            std::cout << " Intern creates " << forNames << std::endl;
+            return  formCreators[i](target);
+        }
+    }
+    std::cout << "Error: Form name \"" << forNames << "\" does not exist!" << std::endl;
+    return  NULL;
 }
