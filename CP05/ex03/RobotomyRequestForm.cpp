@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 14:31:14 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/02/26 11:55:34 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/02/26 15:11:36 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,9 @@ void    RobotomyRequestForm::executeAction(void) const
         std::cout << _target << " has been Successfully randomized :D" << std::endl;
     else
         std::cout << _target << " randomized failed :(";
+}
+
+AForm*   RobotomyRequestForm::create(const std::string &target)
+{
+    return  new RobotomyRequestForm(target);
 }

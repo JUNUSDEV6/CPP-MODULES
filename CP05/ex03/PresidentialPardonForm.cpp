@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 12:45:21 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/02/26 11:54:53 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/02/26 15:03:11 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,9 @@ PresidentialPardonForm::~PresidentialPardonForm(void)
 void    PresidentialPardonForm::executeAction(void) const
 {
     std::cout << _target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
+}
+
+AForm*  PresidentialPardonForm::create(const std::string &target)
+{
+    return  new PresidentialPardonForm(target);
 }

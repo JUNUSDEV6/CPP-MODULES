@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 16:20:33 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/02/26 11:51:33 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/02/26 15:13:11 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class   ShrubberyCreationForm : public AForm
         ShrubberyCreationForm(const std::string &target);
         virtual ~ShrubberyCreationForm(void);
         void   executeAction(void)  const;
+        static  AForm*  create(const std::string &target);
     
     private:
         std::string _target;
