@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 12:43:04 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/02/26 15:43:08 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/02/26 16:42:41 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,21 +35,21 @@ Intern::~Intern(void)
 
 AForm*  Intern::makeForm(const std::string &name, const std::string &target)
 {
-    std::string name[3]= {"Shruberry creation", "Robotomy Request", "presidential pardon"};
+    std::string names[3]= {"shrubbery creation", "robotomy request", "presidential pardon"};
     AForm*  (*formCreators[3])(const std::string &) = {
         &PresidentialPardonForm::create,
         &RobotomyRequestForm::create,
         &ShrubberyCreationForm::create,
     };
 
-    for (int i = 0; i < 3, i++)
+    for (int i = 0; i < 3; i++)
     {
-        if (forNames[i] == forNames)
+        if (names[i] == name)
         {
-            std::cout << " Intern creates " << forNames << std::endl;
+            std::cout << " Intern creates " << name << std::endl;
             return  formCreators[i](target);
         }
     }
-    std::cout << "Error: Form name \"" << forNames << "\" does not exist!" << std::endl;
+    std::cout << "Error: Form name \"" << names << "\" does not exist!" << std::endl;
     return  NULL;
 }
