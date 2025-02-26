@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 16:20:33 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/02/20 12:45:04 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/02/26 11:51:33 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 # include <fstream>
 # include "AForm.hpp"
 
-class   ShrubberyCreationForm : public : AForm
+class   AForm;
+
+class   ShrubberyCreationForm : public AForm
 {
     public:
         ShrubberyCreationForm(const std::string &target);

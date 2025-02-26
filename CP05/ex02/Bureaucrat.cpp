@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 17:59:56 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/02/19 11:21:32 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/02/26 12:36:31 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,19 +70,31 @@ void	Bureaucrat::decrGrade(void)
 		_grade--;
 }
 
-void	Bureaucrat::signForm(Form &form)
+void	Bureaucrat::signForm(AForm &aform)
 {
 	try
 	{
-		form.beSigned(*this);
-		std::cout <<_name << "signed"  << form.getName() << std::endl;
+		aform.beSigned(*this);
+		std::cout <<_name << " signed "  << aform.getName() << std::endl;
 	}
 	catch (std::exception &e)
 	{
-		std::cout << _name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+		std::cout << _name << " couldn't sign " << aform.getName() << " because " << e.what() << std::endl;
 	}
 }
 
+void	Bureaucrat::executeForm(AForm const & form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << _name << " executed " << form.getName() << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << _name << " couldn't execute " << form.getName() << " because " << e.what() << std::endl;
+	}
+}
 std::ostream	&operator<<(std::ostream &os, const Bureaucrat&b)
 {
 	os << b.getName() << ", Bureaucrat grade " << b.getGrade() << ".";

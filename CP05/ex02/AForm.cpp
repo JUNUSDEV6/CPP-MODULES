@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 13:49:37 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/02/19 15:30:44 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/02/26 12:34:38 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,18 @@ bool    AForm::getBool(void)    const
 
 void    AForm::beSigned(Bureaucrat &bureaucrat)
 {
-    if (bureaucrat.getGrade() < _excGrade)
+    if (bureaucrat.getGrade() > _excGrade)
         throw   GradeTooLowException();
     _boolean = true;
+}
+
+void    AForm::execute(Bureaucrat const & executor) const
+{
+    if (!_boolean)
+        throw AForm::FormNotSignedException();
+    if (executor.getGrade() > _excGrade)
+        throw AForm::GradeTooLowException();
+    executeAction();
 }
 
 std::ostream    &operator<<(std::ostream &os, const AForm &form)

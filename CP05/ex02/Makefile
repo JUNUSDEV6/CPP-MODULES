@@ -6,7 +6,7 @@
 #    By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/17 13:28:12 by yohanafi          #+#    #+#              #
-#    Updated: 2025/02/20 16:12:13 by yohanafi         ###   ########.fr        #
+#    Updated: 2025/02/26 11:56:19 by yohanafi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = AForm
 CC = c++ 
 CFLAGS = -Wall -Werror -Wextra -std=c++98 -Wpedantic
 
-SRC = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShruberryCreationForm.cpp
+SRC = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 OBJECTS = $(SRC:.cpp=.o)
 
 RM = rm -f

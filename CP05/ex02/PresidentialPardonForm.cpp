@@ -6,13 +6,13 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 12:45:21 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/02/20 15:21:08 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/02/26 11:54:53 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : Aform("Pardon Grace", 25, 5), _target(target)
+PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : AForm("Pardon Grace", 25, 5), _target(target)
 {
     std::cout << "PresidentialPardonForm Contructor Called" << std::endl;
 }
