@@ -3,10 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: youneshanafi <youneshanafi@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 16:54:16 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/02/26 16:54:18 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/02/28 16:35:58 by youneshanaf      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ScalarConverter.hpp"
+
+ScalarConverter::ScalarConverter(void)
+{
+	std::cout << "Constructor ScalarConverter Called" << std::endl;
+}
 
