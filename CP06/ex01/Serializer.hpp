@@ -6,7 +6,7 @@
 /*   By: youneshanafi <youneshanafi@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 16:57:06 by youneshanaf       #+#    #+#             */
-/*   Updated: 2025/03/06 17:25:05 by youneshanaf      ###   ########.fr       */
+/*   Updated: 2025/03/07 12:18:30 by youneshanaf      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,21 @@
 
 struct	Data
 {
-	int			i;
+	int			id;
 	std::string	name;
 };
 
 class Serializer
 {
 	public:
+		static uintptr_t serialize(Data* ptr);
+		static Data* deserialize(uintptr_t raw);
+	
+	private:
 		Serializer(void);
 		Serializer(const Serializer &other);
 		Serializer &operator=(const Serializer &other);
 		~Serializer(void);
-	
-		static uintptr_t serialize(Data* ptr);
-		static Data* deserialize(uintptr_t raw);
-
 };
 
 

@@ -6,16 +6,18 @@
 /*   By: youneshanafi <youneshanafi@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 17:19:13 by youneshanaf       #+#    #+#             */
-/*   Updated: 2025/03/06 17:25:15 by youneshanaf      ###   ########.fr       */
+/*   Updated: 2025/03/07 11:59:36 by youneshanaf      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Serializer.hpp"
 
-Serializer::Serializer(void)
+uintptr_t	Serializer::serialize(Data* ptr)
 {
-	std::cout << "Constructor Serializer Called" << std::endl;
+	return	reinterpret_cast<uintptr_t>(ptr);
 }
 
-
-static	
+Data*	Serializer::deserialize(uintptr_t raw)
+{
+	return	reinterpret_cast<Data*>(raw);
+}
