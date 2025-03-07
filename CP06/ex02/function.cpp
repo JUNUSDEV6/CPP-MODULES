@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.hpp                                           :+:      :+:    :+:   */
+/*   function.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youneshanafi <youneshanafi@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/07 13:05:41 by youneshanaf       #+#    #+#             */
-/*   Updated: 2025/03/07 13:09:18 by youneshanaf      ###   ########.fr       */
+/*   Created: 2025/03/07 13:22:04 by youneshanaf       #+#    #+#             */
+/*   Updated: 2025/03/07 13:50:43 by youneshanaf      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	BASE_HPP
-# define BASE_HPP
+#include "function.hpp"
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
+#include <cstdlib>
+#include <ctime>
+#include <iostream>
 
-class Base
+Base	*generate(void)
 {
-	public:
-		virtual ~Base(void);
-};
+	std::srand(std::time(0));
+	int	randNum = std::rand() % 3;
 
-#endif
+	if (randNum == 0)
+		return (new A);
+	else if (randNum == 1)
+		return (new B);
+	else
+		return (new C);
+}
