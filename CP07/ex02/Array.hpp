@@ -6,12 +6,13 @@
 /*   By: youneshanafi <youneshanafi@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 15:28:20 by youneshanaf       #+#    #+#             */
-/*   Updated: 2025/03/13 15:46:53 by youneshanaf      ###   ########.fr       */
+/*   Updated: 2025/03/13 15:57:24 by youneshanaf      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef	ARRAY_HPP
 # define ARRAY_HPP
+# include <iostream>
 
 template <typename  T>
 class Array
