@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: youneshanafi <youneshanafi@student.42.f    +#+  +:+       +#+        */
+/*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 16:54:16 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/03/04 16:01:06 by youneshanaf      ###   ########.fr       */
+/*   Updated: 2025/04/02 16:53:20 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <limits>
 #include <cstdlib>
 #include <cmath>
+
 
 void	ScalarConverter::converter(const std::string &target)
 {
