@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: youneshanafi <youneshanafi@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 16:54:16 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/04/02 16:53:20 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/04/14 13:19:21 by youneshanaf      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,66 +16,192 @@
 #include <limits>
 #include <cstdlib>
 #include <cmath>
+#include <sstream>
+#include <cerrno>
 
 
-void	ScalarConverter::converter(const std::string &target)
+
+static	int	detectTarget(std::string str)
 {
-	char	c;
-	int		i;
-	float	f;
-	double	d;
+	if (str == "-inff" || str == "+inff" || str == "nanf"
+		|| str == "-inf" || str == "+inf" || str == "nan")
+		return (SPECIAL);
+	
+	int	index = (str[0] == '-');
+	int	index_start = index;
 
-	if (target.length() == 3 && target[0] == '\'' && target[2] == '\'')
-	{
-		c = target[1];
-		i = static_cast<int>(c);
-		f = static_cast<float>(c);
-		d = static_cast<double>(c);
-	}
-	else if (target == "nan" || target == "nanf" || target == "+inff" || target == "+inf" || target == "-inf" || target == "-inff")
-	{
-		std::cout << "char: impossible" << std::endl;
-		std::cout << "int: impossible" << std::endl;
-		std::cout << "float: " << (target == "nanf" ? "nanf" : target == "-inff" ? "-inff" : target == "+inff" ? "+inff" : target + "f") << std::endl;
-        std::cout << "double: " << (target == "nanf" ? "nan" : target == "-inff" ? "-inf" : target == "+inff" ? "+inf" : target) << std::endl;
-        return;
-	}
+	if (!str[index])
+		return (CHAR);
+
+	if (str[index] == '0' && isdigit(str[index + 1]))
+		return (INVALID);
+
+	while (isdigit(str[index]))
+		index++;
+		
+	if (!str[index])
+		return (INT);
+	
+	if (index == index_start && !str[index + 1])
+	return (CHAR);
+
+	if (index == index_start || str[index] != '.')
+	return (INVALID);
+
+	index++;
+	index_start = index;
+	while (isdigit(str[index]))
+		index++;
+
+	if (index_start == index)
+		return (INVALID);
+
+	if (!str[index])
+		return (DOUBLE);
+
+	if (str[index] != 'f')
+		return (INVALID);
+
+	if (!str[index + 1])
+		return (FLOAT);
+		
+	return (INVALID);	
+}
+
+static void	printRlt(char c, int i, float f, double d)
+{
+	if (isprint(c))
+		std::cout << "char: " << c << std::endl;
 	else
-	{
-		char*	endPtr;
+		std::cout << "char: non printable" << std::endl;
+	
+	double overflow = static_cast<double>(i);
 
-		d = std::strtod(target.c_str(), &endPtr);
-		if (*endPtr == 'f' && *(endPtr + 1) == '\0')
-		{
-			f = static_cast<float>(d);
-			i = static_cast<int>(f);
-			c = static_cast<char>(i);
-		}
-		else if (*endPtr == '\0')
-		{
-			f = static_cast<float>(d);
-			i = static_cast<int>(d);
-			c = static_cast<char>(i);
-		}
-		else
-		{
-			std::cout << "Invalid input" << std::endl;
-			return ;
-		}
-	}
-
-	if (i >= 32 && i <= 126)
-		std::cout << "char: '" << c << "'" << std::endl;
-	else if (i >= 0 && i <= 255)
-		std::cout << "char: Non displayable" << std::endl;
-	else
-		std::cout << "char: impossible" << std::endl;
-
-	if (d > std::numeric_limits<int>::max() || d < std::numeric_limits<int>::min())
-		std::cout << "int: impossible" << std::endl;
+	if (overflow > d && overflow - d >= 1 || d > overflow &&  d - overflow)
+		std::cout << "int: Overflow" << std::endl;
 	else
 		std::cout << "int: " << i << std::endl;
+	
+	
+
+
+
+	
+}
+
+static void convertChar(std::string str )
+{
+	char	c = str[0];
+	int		i = static_cast<int>(c);
+	float	f = static_cast<float>(c);
+	double	d = static_cast<double>(c);
+
+	printRlt(c, i , f, d);
+}
+
+static void	convertInt(std::string str)
+{
+	std::istringstream	rlt(str);
+
+	int		i;
+	rlt >> i;
+	if (rlt.fail())
+	{
+		std::cout << "overflow" << std::endl;
+		return ;
+	}
+	
+	char	c = static_cast<char>(i);
+	float	f = static_cast<float>(i);
+	double	d = static_cast<double>(i);
+
+	printRlt(c, i, f, d);
+}
+
+static void	convertFloat(std ::string str)
+{
+	float 	f = strtof(str.c_str(), NULL);
+	//errno = 0;
+	if (errno == ERANGE) 
+	{
+		std::cout << "Float overflow" << std::endl;
+		return ;
+	}
+
+	char	c = static_cast<char>(f);
+	int		i = static_cast<int>(f);
+	double	d = static_cast<double>(f);
+	
+	printRlt(c, i, f, d);
+}
+
+static void	convertDouble(std::string str)
+{
+	double	d = strtod(str.c_str(), NULL);
+	
+	if (errno == ERANGE)
+	{
+		std::cout << "Double overflow" << std::endl;
+		return ;
+	}
+	char	c = static_cast<char>(d);
+	int		i = static_cast<int>(d);
+	float	f = static_cast<float>(d);
+
+	printRlt(c, i, f, d);
+}
+
+static void	convertSpec(std::string	str)
+{
+	if (str == "+inff" || str == "+inf")
+	{
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: +inff" << std::endl;
+		std::cout << "double: +inf" << std::endl;
+	} else if (str == "-inff" || str == "-inf")
+	{
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: -inff" << std::endl;
+		std::cout << "double: -inf" << std::endl;
+	} else if (str == "nanf" || str == "nan")
+	{
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: nanf" << std::endl;
+		std::cout << "double: nan" << std::endl;
+	} else
+		std::cout << "type special not handled: " << str << std::endl;
+}
+
+void	ScalarConverter::convert(const std::string &target)
+{
+	int	type = detectTarget(target);
+
+	switch (type)
+	{
+		case CHAR:
+			convertChar(target);
+			break;
 		
-	std::cout << "float: " << f << "f" << std::endl;
-	std::cout << "double: " << d << std::endl;	
+		case INT:
+			convertInt(target);
+			break;
+		
+		case FLOAT:
+			convertFloat(target);
+			break;
+		
+		case DOUBLE:
+			convertDouble(target);
+			break;
+		
+		case SPECIAL:
+			convertSpec(target);
+			break;
+			
+		default:
+			break;
+	}
 }

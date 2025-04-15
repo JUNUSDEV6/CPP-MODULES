@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: youneshanafi <youneshanafi@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 16:54:04 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/04/02 16:59:36 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/04/08 16:05:31 by youneshanaf      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,17 @@
 # include <string>
 # include <iostream>
 
+# define CHAR 0
+# define INT 1
+# define FLOAT 2
+# define DOUBLE 3
+# define SPECIAL 4
+# define INVALID 5
+
 class ScalarConverter
 {
 	public:
-		static void	converter(const std::string	&target);
+		static void	convert(const std::string	&target);
 	
 	private:
 		ScalarConverter(void) = delete;
