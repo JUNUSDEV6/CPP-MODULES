@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: youneshanafi <youneshanafi@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 17:15:39 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/04/01 17:15:45 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/04/22 12:39:36 by youneshanaf      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    ScalarConverter::converter(argv[1]);
+    ScalarConverter::convert(argv[1]);
     return 0;
 }

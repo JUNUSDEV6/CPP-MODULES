@@ -6,7 +6,7 @@
 /*   By: youneshanafi <youneshanafi@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 16:54:04 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/04/08 16:05:31 by youneshanaf      ###   ########.fr       */
+/*   Updated: 2025/04/22 12:37:39 by youneshanaf      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ class ScalarConverter
 		static void	convert(const std::string	&target);
 	
 	private:
-		ScalarConverter(void) = delete;
-		ScalarConverter(const ScalarConverter &other) = delete;
-		ScalarConverter &operator=(const ScalarConverter &other) = delete;
-		~ScalarConverter(void) = delete;
+		ScalarConverter(void);
+		ScalarConverter(const ScalarConverter &other);
+		ScalarConverter &operator=(const ScalarConverter &other);
+		~ScalarConverter(void);
 
 };
 

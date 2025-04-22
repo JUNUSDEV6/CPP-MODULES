@@ -6,7 +6,7 @@
 /*   By: youneshanafi <youneshanafi@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 16:54:16 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/04/14 13:19:21 by youneshanaf      ###   ########.fr       */
+/*   Updated: 2025/04/22 12:39:08 by youneshanaf      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,29 @@
 #include <sstream>
 #include <cerrno>
 
+ScalarConverter::ScalarConverter(void)
+{
+	std::cout << "constructor default called" << std::endl;
+}
 
+ScalarConverter::ScalarConverter(const ScalarConverter &other)
+{
+	std::cout << "copy constructor called" << std::endl;
+	*this = other;
+	return ;
+}
+
+ScalarConverter &ScalarConverter::operator=(const ScalarConverter &other)
+{
+	std::cout << " copy assignement operator called" << std::endl;
+	(void)other;
+	return *this;
+}
+
+ScalarConverter::~ScalarConverter(void)
+{
+	std::cout << "destructor called" << std::endl;
+}
 
 static	int	detectTarget(std::string str)
 {
@@ -68,6 +90,15 @@ static	int	detectTarget(std::string str)
 	return (INVALID);	
 }
 
+static	std::string	print_dot(int i, float f)
+{
+	float	rlt = static_cast<float>(i);
+
+	if (rlt == f)
+		return(".0");
+	return ("");
+}
+
 static void	printRlt(char c, int i, float f, double d)
 {
 	if (isprint(c))
@@ -77,16 +108,12 @@ static void	printRlt(char c, int i, float f, double d)
 	
 	double overflow = static_cast<double>(i);
 
-	if (overflow > d && overflow - d >= 1 || d > overflow &&  d - overflow)
+	if ((overflow > d && overflow - d >= 1) || (d > overflow &&  d - overflow))
 		std::cout << "int: Overflow" << std::endl;
 	else
 		std::cout << "int: " << i << std::endl;
-	
-	
-
-
-
-	
+	std::cout << "float: " << f << print_dot(i, f) << "f" << std::endl;
+	std::cout << "double: " << f << print_dot(i, f) << std::endl;
 }
 
 static void convertChar(std::string str )
