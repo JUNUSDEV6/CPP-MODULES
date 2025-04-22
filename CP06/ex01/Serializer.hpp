@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: youneshanafi <youneshanafi@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 16:57:06 by youneshanaf       #+#    #+#             */
-/*   Updated: 2025/04/02 16:56:36 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/04/22 13:11:44 by youneshanaf      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ class Serializer
 		static Data* deserialize(uintptr_t raw);
 	
 	private:
-		Serializer(void) = delete;
-		Serializer(const Serializer &other) = delete;
-		Serializer &operator=(const Serializer &other) = delete;
-		~Serializer(void) = delete;
+		Serializer(void);
+		Serializer(const Serializer &other);
+		Serializer &operator=(const Serializer &other);
+		~Serializer(void);
 };
 
 

@@ -3,21 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   Serializer.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: youneshanafi <youneshanafi@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 17:19:13 by youneshanaf       #+#    #+#             */
-/*   Updated: 2025/04/02 15:01:30 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/04/22 13:15:17 by youneshanaf      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Serializer.hpp"
 
-Serializer::serialize(void)
+Serializer::Serializer(void)
 {
 	std::cout << "constructor Serializer called" << std::endl;
 }
 
+Serializer::Serializer(const Serializer &other)
+{
+	std::cout << "copy constructor serializer" << std::endl;
+	*this = other;
+	return ;
+}
 
+Serializer &Serializer::operator=(const Serializer &other)
+{
+	std::cout << "copy assignement operator" << std::endl;
+	(void)other;
+	return *this;
+}
 
 uintptr_t	Serializer::serialize(Data* ptr)
 {
