@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 13:22:04 by youneshanaf       #+#    #+#             */
-/*   Updated: 2025/04/25 15:07:27 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/04/25 16:11:23 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,21 +45,28 @@ void	identify(Base *p)
 
 void	identify(Base &p)
 {
-	try
-	{
-		(void)dynamic_cast<A&>(p);
-		std::cout << "A" << std::endl;
-	} catch (std::bad_cast &) {}
-	
-	try 
-	{
-		(void)dynamic_cast<B&>(p);
-		std::cout << "B" << std::endl;
-	} catch (std::bad_cast &) {}
+	  Base* ptrA = dynamic_cast<A*>(&p);
 
-	try
-	{
-		(void)dynamic_cast<C&>(p);
-		std::cout << "C" << std::endl;
-	}catch (std::bad_cast &) {}
+	  if (ptrA) 
+	  {
+		  std::cout << "A" << std::endl;
+		  return;
+	  }
+
+	  Base* ptrB = dynamic_cast<B*>(&p);
+	  if (ptrB) 
+	  {
+		  std::cout << "B" << std::endl;
+		  return;
+	  }
+  
+	  Base* ptrC = dynamic_cast<C*>(&p);
+
+	  if (ptrC) 
+	  {
+		  std::cout << "C" << std::endl;
+		  return;
+	  }
+  
+	  std::cout << "Unknown type" << std::endl;
 }
