@@ -6,7 +6,7 @@
 /*   By: youneshanafi <youneshanafi@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 16:54:16 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/04/22 12:39:08 by youneshanaf      ###   ########.fr       */
+/*   Updated: 2025/04/22 12:59:14 by youneshanaf      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,25 +49,25 @@ static	int	detectTarget(std::string str)
 		|| str == "-inf" || str == "+inf" || str == "nan")
 		return (SPECIAL);
 	
-	int	index = (str[0] == '-');
+	int	index = (str[0] == '-'); // index = 1 si signe négatif, sinon 0
 	int	index_start = index;
 
-	if (!str[index])
+	if (!str[index]) // '-' contient rien après le -
 		return (CHAR);
 
-	if (str[index] == '0' && isdigit(str[index + 1]))
+	if (str[index] == '0' && isdigit(str[index + 1])) // si un nombre qui commence avec un zéro (012)
 		return (INVALID);
 
 	while (isdigit(str[index]))
 		index++;
 		
-	if (!str[index])
+	if (!str[index]) // rien après les chiffres -> just un int
 		return (INT);
 	
-	if (index == index_start && !str[index + 1])
+	if (index == index_start && !str[index + 1]) //pas bougé, just un char
 	return (CHAR);
 
-	if (index == index_start || str[index] != '.')
+	if (index == index_start || str[index] != '.') // ".", "a.2", "-.2"
 	return (INVALID);
 
 	index++;
@@ -75,16 +75,16 @@ static	int	detectTarget(std::string str)
 	while (isdigit(str[index]))
 		index++;
 
-	if (index_start == index)
+	if (index_start == index) 	// "42."  "12.f"
 		return (INVALID);
 
-	if (!str[index])
+	if (!str[index]) 			// "42.0"
 		return (DOUBLE);
 
 	if (str[index] != 'f')
 		return (INVALID);
 
-	if (!str[index + 1])
+	if (!str[index + 1])		// "42.0f"
 		return (FLOAT);
 		
 	return (INVALID);	
