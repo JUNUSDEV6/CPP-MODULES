@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   function.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: youneshanafi <youneshanafi@student.42.f    +#+  +:+       +#+        */
+/*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 13:22:04 by youneshanaf       #+#    #+#             */
-/*   Updated: 2025/03/08 16:25:44 by youneshanaf      ###   ########.fr       */
+/*   Updated: 2025/04/25 15:07:27 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
+#include <typeinfo>
+
 
 Base	*generate(void)
 {
