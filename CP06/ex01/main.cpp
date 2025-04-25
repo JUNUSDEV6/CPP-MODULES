@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: youneshanafi <youneshanafi@student.42.f    +#+  +:+       +#+        */
+/*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 11:59:47 by youneshanaf       #+#    #+#             */
-/*   Updated: 2025/03/07 12:18:40 by youneshanaf      ###   ########.fr       */
+/*   Updated: 2025/04/25 15:03:40 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main()
     myData.name = "Données de test";
     
     // Sérialiser le pointeur
-    uintptr_t raw = Serializer::serialize(&myData);
+    std::size_t raw = Serializer::serialize(&myData);
     
     // Désérialiser en un pointeur
     Data* deserializedData = Serializer::deserialize(raw);

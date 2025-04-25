@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: youneshanafi <youneshanafi@student.42.f    +#+  +:+       +#+        */
+/*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 16:57:06 by youneshanaf       #+#    #+#             */
-/*   Updated: 2025/04/22 13:11:44 by youneshanaf      ###   ########.fr       */
+/*   Updated: 2025/04/25 15:04:18 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef	SERIALIZER_HPP
 # define  SERIALIZER_HPP
-# include <cstdint>
 # include <iostream>
 
 struct	Data
@@ -24,8 +23,8 @@ struct	Data
 class Serializer
 {
 	public:
-		static uintptr_t serialize(Data* ptr);
-		static Data* deserialize(uintptr_t raw);
+		static std::size_t serialize(Data* ptr);
+		static Data* deserialize(std::size_t raw);
 	
 	private:
 		Serializer(void);

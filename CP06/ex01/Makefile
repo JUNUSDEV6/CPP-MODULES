@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: youneshanafi <youneshanafi@student.42.f    +#+  +:+       +#+         #
+#    By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/17 13:28:12 by yohanafi          #+#    #+#              #
-#    Updated: 2025/03/07 12:16:05 by youneshanaf      ###   ########.fr        #
+#    Updated: 2025/04/25 15:04:52 by yohanafi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Converter
+NAME = Serializer
 
 CC = c++ 
 CFLAGS = -Wall -Werror -Wextra -std=c++98 -Wpedantic

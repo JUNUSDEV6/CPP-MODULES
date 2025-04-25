@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Serializer.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: youneshanafi <youneshanafi@student.42.f    +#+  +:+       +#+        */
+/*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 17:19:13 by youneshanaf       #+#    #+#             */
-/*   Updated: 2025/04/22 13:15:17 by youneshanaf      ###   ########.fr       */
+/*   Updated: 2025/04/25 15:24:12 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ Serializer &Serializer::operator=(const Serializer &other)
 	return *this;
 }
 
-uintptr_t	Serializer::serialize(Data* ptr)
+std::size_t	Serializer::serialize(Data* ptr)
 {
-	return	reinterpret_cast<uintptr_t>(ptr);
+	return	reinterpret_cast<size_t>(ptr); // reinterpret_cast can switch 2 type fundamental diff pointeur <->int
 }
 
-Data*	Serializer::deserialize(uintptr_t raw)
+Data*	Serializer::deserialize(std::size_t raw)
 {
 	return	reinterpret_cast<Data*>(raw);
 }
