@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 13:22:04 by youneshanaf       #+#    #+#             */
-/*   Updated: 2025/04/25 16:11:23 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/04/28 13:29:01 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
-#include <typeinfo>
 
 
 Base	*generate(void)
@@ -45,28 +44,32 @@ void	identify(Base *p)
 
 void	identify(Base &p)
 {
-	  Base* ptrA = dynamic_cast<A*>(&p);
-
-	  if (ptrA) 
-	  {
-		  std::cout << "A" << std::endl;
-		  return;
-	  }
-
-	  Base* ptrB = dynamic_cast<B*>(&p);
-	  if (ptrB) 
-	  {
-		  std::cout << "B" << std::endl;
-		  return;
-	  }
-  
-	  Base* ptrC = dynamic_cast<C*>(&p);
-
-	  if (ptrC) 
-	  {
-		  std::cout << "C" << std::endl;
-		  return;
-	  }
-  
-	  std::cout << "Unknown type" << std::endl;
+	try
+    {
+        A& a = dynamic_cast<A&>(p);
+        (void)a;
+        std::cout << "A" << std::endl;
+    }
+    catch (...)
+    {
+        try
+        {
+            B& b = dynamic_cast<B&>(p);
+            (void)b;
+            std::cout << "B" << std::endl;
+        }
+        catch (...)
+        {
+            try
+            {
+                C& c = dynamic_cast<C&>(p);
+                (void)c;
+                std::cout << "C" << std::endl;
+            }
+            catch (...)
+            {
+                std::cout << "Reference identifies: Unknown type" << std::endl;
+            }
+        }
+    }
 }
