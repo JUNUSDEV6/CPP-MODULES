@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: youneshanafi <youneshanafi@student.42.f    +#+  +:+       +#+        */
+/*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 15:28:20 by youneshanaf       #+#    #+#             */
-/*   Updated: 2025/03/13 17:02:11 by youneshanaf      ###   ########.fr       */
+/*   Updated: 2025/06/30 14:57:31 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
