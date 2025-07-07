@@ -3,24 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: youneshanafi <youneshanafi@student.42.f    +#+  +:+       +#+        */
+/*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/10 13:05:38 by youneshanaf       #+#    #+#             */
-/*   Updated: 2025/03/10 13:21:25 by youneshanaf      ###   ########.fr       */
+/*   Created: 2025/07/04 16:40:19 by yohanafi          #+#    #+#             */
+/*   Updated: 2025/07/04 16:50:46 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	ITER_HPP
+#ifndef ITER_HPP
 # define ITER_HPP
-# include <iostream>
 
-template <typename T, typename Func>
+template<typename T, typename Func>
 
-void	iter(T *array, size_t length, Func func)
+void    iter(T *array, size_t len, Func func)
 {
-	for (size_t i = 0; i < length; i++)
-		func(array[i]);
+    for (size_t i = 0; i < len; i++)
+        func(array[i]);
 }
 
-
-#endif
+#endif 

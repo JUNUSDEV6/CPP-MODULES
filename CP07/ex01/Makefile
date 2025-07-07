@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: youneshanafi <youneshanafi@student.42.f    +#+  +:+       +#+         #
+#    By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/17 13:28:12 by yohanafi          #+#    #+#              #
-#    Updated: 2025/03/11 14:49:54 by youneshanaf      ###   ########.fr        #
+#    Updated: 2025/07/07 16:10:13 by yohanafi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = Converter
 CC = c++ 
 CFLAGS = -Wall -Werror -Wextra -std=c++98 -Wpedantic
 
-SRC = main.cpp functions.cpp
+SRC = main.cpp
 OBJECTS = $(SRC:.cpp=.o)
 
 RM = rm -f
