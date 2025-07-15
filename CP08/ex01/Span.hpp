@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 16:05:50 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/07/14 17:24:31 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/07/15 17:05:54 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ class   Span
         Span &operator=(const Span& other);
         ~Span(void);
 
-        void            addNumber(int n);
-        unsigned int    shortestSpan() const;
-        unsigned int    longestSpan() const;
+        void    addNumber(int n);
+        int     shortestSpan() const;
+        int     longestSpan() const;
 
     private:
         std::vector<int>    _array;
