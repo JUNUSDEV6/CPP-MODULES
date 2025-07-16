@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 15:02:21 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/07/16 16:42:59 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/07/16 16:44:30 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,8 @@ Vect2&  Vect2::operator+=(const Vect2& other) {
     return *this;
 }
 
-Vect2&  Vect2::operator-=(const Vect2& other){}
+Vect2&  Vect2::operator-=(const Vect2& other){
+    _x -= other._x;
+    _y -= other._y;
+    return *this;
+}
