@@ -6,15 +6,18 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 19:08:31 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/07/15 20:04:28 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/07/16 14:08:52 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MUTANTSTACK_HPP
 #define MUTANTSTACK_HPP
 
+#include <stack>
+#include <iostream>
+
 template <typename T>
-class   MutantStack : public : std::stack<T>
+class   MutantStack : public std::stack<T>
 {
     public:
         typedef typename    std::stack<T>::container_type::iterator                 iterator;
@@ -39,5 +42,7 @@ class   MutantStack : public : std::stack<T>
         const_reverse_iterator  rbegin() const;
         const_reverse_iterator  rend() const;
 };
+
+#include "MutantStack.tpp"
 
 #endif
