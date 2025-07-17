@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 17:34:56 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/07/10 18:38:40 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/07/17 18:49:37 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ class   Bigint
         Bigint(void);
         Bigint(unsigned int nb);
         Bigint(const std::string& str);
-        Bigint(const Bigint& other);
-        Bigint  operator=(const Bigint& other);
+        Bigint(const Bigint& other) = default;
+        Bigint&  operator=(const Bigint& other) = default;
 
         // Arithmetic
         Bigint  operator+(const Bigint& other) const;
@@ -48,7 +48,7 @@ class   Bigint
         friend  std::ostream& operator<<(std::ostream& os, const Bigint bi);
 
         private:
-            std::vector<char> digits;
+            std::string value;
             void    remove_leading_zeros();
             bool    is_less(const Bigint& other) const;
 };
