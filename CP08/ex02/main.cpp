@@ -6,11 +6,12 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 14:05:40 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/07/16 14:06:32 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/07/23 14:33:18 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
+#include <list>
 
 int main()
 {
@@ -35,5 +36,28 @@ int main()
         ++it;
     }
     std::stack<int> s(mstack);
+    {
+        std::list<int> l;
+
+        l.push_back(5);
+        l.push_back(17);
+        std::cout << l.back() << std::endl;
+        l.pop_back();
+        std::cout << l.size() << std::endl;
+        l.push_back(3);
+        l.push_back(5);
+        l.push_back(737);
+        l.push_back(0);
+            
+        std::list<int>::iterator it = l.begin();
+        std::list<int>::iterator ite = l.end();
+            
+        while (it != ite)
+        {
+            std::cout << *it << std::endl;
+            ++it;
+        }
+                
+    }
     return 0;
 }

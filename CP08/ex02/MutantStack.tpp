@@ -5,54 +5,68 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/15 20:05:08 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/07/15 20:56:10 by yohanafi         ###   ########.fr       */
+/*   Created: 2025/07/23 14:29:38 by yohanafi          #+#    #+#             */
+/*   Updated: 2025/07/23 14:31:07 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef  MUTANTSTACK_TPP
-#define MUTANTSTACK_TPP
+#pragma once
 
-MutantStack::MutantStack() {}
+#include "MutantStack.hpp"
 
-MutantStack::~MutantStack() {}
+template <typename T>
+MutantStack<T>::MutantStack() : std::stack<T>() {}
 
-MutantStack::MutantStack(const MutantStack& other) : std::stack<T>(other) {}
+template <typename T>
+MutantStack<T>::MutantStack(const MutantStack<T>& other) : std::stack<T>(other) {}
 
-MutantStack::&operator=(const MutantStack& other) {
-    
+template <typename T>
+MutantStack<T>& MutantStack<T>::operator=(const MutantStack<T>& other)
+{
+    if (this != &other)
+        std::stack<T>::operator=(other);
+    return *this;
 }
 
-iterator    MutantStack::begin() {
+template <typename T>
+MutantStack<T>::~MutantStack() {}
+
+template <typename T>
+typename MutantStack<T>::iterator MutantStack<T>::begin() {
     return this->c.begin();
 }
 
-iterator    MutantStack::end() {
-    return  this->c.end();
-}
-
-const_iterator  MutantStack::begin() const {
-    return  this->c.begin();
-}
-
-const_iterator  MutantStack::end() const {
+template <typename T>
+typename MutantStack<T>::iterator MutantStack<T>::end() {
     return this->c.end();
 }
 
-reverse_iterator    MutantStack::rbegin() {
-    return this->rbegin();
+template <typename T>
+typename MutantStack<T>::const_iterator MutantStack<T>::begin() const {
+    return this->c.begin();
 }
 
-reverse_iterator    MutantStack::rend() {
-    return  this->rend();
+template <typename T>
+typename MutantStack<T>::const_iterator MutantStack<T>::end() const {
+    return this->c.end();
 }
 
-const_reverse_iterator  MutantStack::rbegin() const {
-    return  this->rbegin();
+template <typename T>
+typename MutantStack<T>::reverse_iterator MutantStack<T>::rbegin() {
+    return this->c.rbegin();
 }
 
-const_reverse_iterator  MutantStack::rend() const {
-    return  this->rend();
+template <typename T>
+typename MutantStack<T>::reverse_iterator MutantStack<T>::rend() {
+    return this->c.rend();
 }
 
-#endif
+template <typename T>
+typename MutantStack<T>::const_reverse_iterator MutantStack<T>::rbegin() const {
+    return this->c.rbegin();
+}
+
+template <typename T>
+typename MutantStack<T>::const_reverse_iterator MutantStack<T>::rend() const {
+    return this->c.rend();
+}

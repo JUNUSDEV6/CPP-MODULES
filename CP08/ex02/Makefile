@@ -6,11 +6,11 @@
 #    By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/14 15:31:50 by yohanafi          #+#    #+#              #
-#    Updated: 2025/07/16 14:06:55 by yohanafi         ###   ########.fr        #
+#    Updated: 2025/07/23 14:34:42 by yohanafi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Span
+NAME = MutantStack
 
 CC = c++ 
 CFLAGS = -Wall -Werror -Wextra -std=c++98 -Wpedantic
