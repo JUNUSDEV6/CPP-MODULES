@@ -6,7 +6,7 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 17:03:22 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/07/15 17:06:05 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/07/15 18:02:02 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Span::Span(unsigned int n) : _maxSize(n) {}
 Span::Span(const Span& other) : _maxSize(other._maxSize), _array(other._array) {}
 
 Span    &Span::operator=(const Span& other){
-    if (this != other)
+    if (this != &other)
     {
         _maxSize = other._maxSize;
         _array = other._array;
@@ -44,7 +44,7 @@ int Span::shortestSpan() const{
         for (int i = 0; i < array2.size() - 1; i++){
             int span = array2[i + 1] - array2[i];
             if (span < minSpan)
-                minSpan = span
+                minSpan = span;
         }
         return minSpan;
 }
@@ -56,5 +56,5 @@ int Span::longestSpan() const {
     int minValue = *std::min_element(_array.begin(), _array.end());
     int maxValue = *std::max_element(_array.begin(), _array.end());
 
-    return minValue - maxValue;
+    return maxValue - minValue;
 }

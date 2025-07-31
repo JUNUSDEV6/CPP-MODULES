@@ -6,16 +6,16 @@
 #    By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/14 15:31:50 by yohanafi          #+#    #+#              #
-#    Updated: 2025/07/14 15:34:54 by yohanafi         ###   ########.fr        #
+#    Updated: 2025/07/15 17:09:13 by yohanafi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Converter
+NAME = Span
 
 CC = c++ 
 CFLAGS = -Wall -Werror -Wextra -std=c++98 -Wpedantic
 
-SRC = main.cpp
+SRC = main.cpp Span.cpp
 OBJECTS = $(SRC:.cpp=.o)
 
 RM = rm -f

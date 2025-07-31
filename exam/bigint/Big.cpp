@@ -34,7 +34,7 @@ Bigint  Bigint::operator-(const Bigint& other) const {
 
     std::string a = value;
     std::string b = other.value;
-    std::string result;
+    std::string rlt;
     int borrow = 0;
 
     int j = a.size() - 1;
@@ -53,5 +53,6 @@ Bigint  Bigint::operator-(const Bigint& other) const {
         i--;
         j--;
     }
-    std
+    std::reverse(rlt.begin(), rlt.end());
+    return Bigint(rlt);
 }

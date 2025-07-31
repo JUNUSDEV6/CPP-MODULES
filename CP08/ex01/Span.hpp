@@ -6,12 +6,18 @@
 /*   By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 16:05:50 by yohanafi          #+#    #+#             */
-/*   Updated: 2025/07/15 17:05:54 by yohanafi         ###   ########.fr       */
+/*   Updated: 2025/07/15 18:00:43 by yohanafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SPAN_HPP
 #define SPAN_HPP
+
+#include <iostream>
+#include <vector>
+#include <stdexcept>
+#include <algorithm>
+#include <climits>
 
 class   Span
 {
