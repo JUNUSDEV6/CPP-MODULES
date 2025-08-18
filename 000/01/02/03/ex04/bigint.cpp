@@ -1,18 +1,15 @@
 #include "bigint.hpp"
 
-
 void    bigint::removeLaodingZero() {
     while (_nb.size() > 1 && _nb[0] == '0')
         _nb.erase(0,1);
 }
 
-bigint::bigint(const std::string& str) : _nb(str) {
-    removeLaodingZero();
-}
-
 bigint::bigint() : _nb("0") {}
 
 bigint::bigint(size_t nb) : _nb(std::to_string(nb)) {}
+
+bigint::bigint(const std::string& str) : _nb(str) {removeLaodingZero();}
 
 bigint::bigint(const bigint& other) : _nb(other._nb) {}
 
@@ -25,24 +22,17 @@ bigint& bigint::operator=(const bigint& other) {
 bigint::~bigint() {}
 
 bigint  bigint::operator+(const bigint& other) const {
-    
     std::string rlt;
-
-    int carry = 0;
-    int i = _nb.size() - 1;
-    int j = other._nb.size() - 1;
-
-    while (i >= 0 || j >= 0 || carry) {
+    int carry = 0, i = _nb.size() - 1, j = other._nb.size() -1;
+    while (carry || i >= 0 || j >= 0){
         int sum = carry;
         if (i >= 0) sum += _nb[i--] - '0';
         if (j >= 0) sum += other._nb[j--] - '0';
-
         rlt = char(sum % 10 + '0') + rlt;
         carry = sum / 10;
     }
-    return bigint(rlt);    
-} 
-
+    return bigint(rlt);
+}
 
 bigint& bigint::operator+=(const bigint& other) {
     _nb = _nb + other._nb;
@@ -54,13 +44,13 @@ bigint& bigint::operator++() {
     return *this;
 }
 
-bigint  bigint::operator++(int) {
+bigint bigint::operator++(int) {
     bigint tmp(_nb);
     *this += bigint(1);
     return tmp;
 }
 
-bigint bigint::operator<<(size_t shift) const {
+bigint  bigint::operator<<(size_t shift) const{
     if (_nb == "0" || shift <= 0) return *this;
     return bigint(_nb + std::string(shift, '0'));
 }
@@ -70,7 +60,7 @@ bigint  bigint::operator>>(size_t shift) const {
     return bigint(_nb.substr(0, _nb.size() - shift));
 }
 
-bigint& bigint::operator<<=(size_t shift) {
+bigint& bigint::operator<<=(size_t shift){
     *this = *this << shift;
     return *this;
 }

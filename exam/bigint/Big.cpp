@@ -56,3 +56,7 @@ Bigint  Bigint::operator-(const Bigint& other) const {
     std::reverse(rlt.begin(), rlt.end());
     return Bigint(rlt);
 }
+
+bigint  bigint::operator<<(const bigint& other) {
+    const_cast<size_t>other.value;
+}

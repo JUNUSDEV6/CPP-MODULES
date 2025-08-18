@@ -1,5 +1,7 @@
+#include "bigint.hpp"
 #include <iostream>
-#include "Big.hpp"
+#include <ostream>
+#include <string>
 
 int main()
 {
@@ -13,15 +15,12 @@ int main()
     std::cout << "e = " << e << std::endl;
     std::cout << "a + b = " << a + b << std::endl;
     std::cout << "(c+= a) = " << (c += a) << std::endl;
-    std::cout << "c - a = " << c - a << std::endl;
     std::cout << "b = " << b << std::endl;
     std::cout << "++b = " << ++b << std::endl;
     std::cout << "b++ = " << b++ << std::endl;
     std::cout << "(b << 10) + 42 = " <<  (b << 10) + 42 << std::endl;
-    std::cout << "(b << 10) + 42 = " <<  (b << ((const bigint) 10)) + 42 << std::endl;
     std::cout << "(d <<= 4) = " << (d <<= 4) << std::endl;
     std::cout << "(d >>= 2) = " << (d >>= 2) << std::endl;
-    
     std::cout << "a = " << a << std::endl;
     std::cout << "d = " << d << std::endl;
     bigint f("42");
