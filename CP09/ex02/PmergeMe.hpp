@@ -15,6 +15,14 @@ class   PmergeMe
     private:
         std::list<int>  _list;
         std::deque<int> _deque;
-}
+
+        void    forJohnsonDeque(std::deque<int>& d);
+        void    forJohnsonList(std::list<int>& i);
+        
+        template    <typename T>
+        void    printContainer(const T& c, const std::string& prefix);
+
+        bool    isPositifNb(const std::string& s);
+};
 
 #endif
