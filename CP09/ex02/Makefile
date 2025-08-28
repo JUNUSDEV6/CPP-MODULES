@@ -6,7 +6,7 @@
 #    By: yohanafi <yohanafi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/18 17:09:09 by yohanafi          #+#    #+#              #
-#    Updated: 2025/08/18 17:09:26 by yohanafi         ###   ########.fr        #
+#    Updated: 2025/08/23 18:37:49 by yohanafi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCDIR = .
 OBJDIR = obj
 
-SOURCES = main.cpp RPN.cpp
+SOURCES = main.cpp PmergeMe.cpp
 OBJECTS = $(SOURCES:%.cpp=$(OBJDIR)/%.o)
 
 all: $(NAME)

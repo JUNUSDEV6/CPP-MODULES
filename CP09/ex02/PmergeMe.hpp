@@ -1,5 +1,14 @@
 #ifndef PMERGEME_HPP
 #define PMERGEME_HPP
+# include <iostream>
+# include <list>
+# include <deque>   
+# include <string>
+# include <stdexcept>
+# include <climits>
+# include <cstdlib>
+# include <ctime>
+# include <cctype>
 
 class   PmergeMe
 {
